@@ -1,0 +1,385 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: monospace,sans-serif;
+}
+body.noSrcoll{
+    height: 100vh;
+    overflow-y: hidden;
+}
+header{
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav .headerContent{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+header nav .headerContent ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+header nav .headerContent h2{
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+header nav .headerContent h2 .user:hover{
+    cursor: pointer;
+}
+
+.modal{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    z-index: 2;
+}
+.modal .modalContent{
+    margin: 0 auto;
+    width: 75%;
+    height: 50%;
+    background-color: white;
+}
+.modal .modalHeader{ 
+    display: flex;
+    align-items: center;
+}
+.modal .modalHeader .modalHeaderHeader{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+.modal .modalHeader div:nth-child(2){
+    flex-shrink: 1;
+    padding: 0 8px;
+}
+.modal .modalHeader div:nth-child(2):hover{
+    svg{
+        fill:black;
+    }
+}
+.modal .modalHeader .modalHeaderHeader .active{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.modal .modalHeader .modalHeaderHeader div{
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    padding: 4px 0;
+}
+.modal .modalContent form{
+    display:none;
+    padding-top: 20px;
+}
+.modal form{
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal form input{
+    border: 1px solid #cecece;
+    padding: 5px 10px;
+    width: 300px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.modal form input:focus{
+    outline: none;
+}
+main{
+    padding-top: 50px;
+}
+.cardsContainer{
+    padding: 40px 10%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+/* From Uiverse.io by ElSombrero2 */ 
+.card {
+overflow: visible;
+width: 190px;
+height: 254px;
+}
+
+
+.content {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms;
+    box-shadow: 0px 0px 10px 1px #000000ee;
+    border-radius: 5px;
+}
+
+.front, .back {
+background-color: #151515;
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+border-radius: 5px;
+overflow: hidden;
+}
+
+.back {
+    width: 100%;
+height: 100%;
+justify-content: center;
+display: flex;
+align-items: center;
+overflow: hidden;
+}
+
+.back::before {
+position: absolute;
+content: ' ';
+display: block;
+width: 160px;
+height: 160%;
+background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background-color: #151515;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 30px;
+}
+
+.card .content .back .back-content .cardImage img{
+    width: 100%;
+    aspect-ratio: 3/2;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.back-content .cardDetails{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.back-content .description{
+    box-shadow: 0px 0px 10px 5px #00000088;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(206,206,206,0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+}
+.back-content .cardDetails .description .genres{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding-top: 5px;
+}
+.back-content .cardDetails .description .title{
+    justify-content: center;
+}
+.back-content .cardDetails .description .genres li{
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-size:10px;
+
+}
+
+.back-content .cardDetails .description .year,.back-content .cardDetails .description .rating{
+    font-size: 10px;
+}
+
+.card:hover .content {
+transform: rotateX(180deg);
+}
+
+@keyframes rotation_481 {
+0% {
+    transform: rotateZ(0deg);
+}
+
+0% {
+    transform: rotateZ(360deg);
+}
+}
+
+.front {
+transform: rotateX(180deg);
+color: white;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.front .front-content {
+position: absolute;
+width: 100%;
+height: 100%;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+z-index: 2;
+}
+
+.front-content .badge {
+background-color: #00000055;
+padding: 2px 10px;
+border-radius: 10px;
+backdrop-filter: blur(2px);
+width: fit-content;
+}
+.front-content .badge .genres{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.description {
+box-shadow: 0px 0px 10px 5px #00000088;
+width: 100%;
+padding: 10px;
+background-color: #00000099;
+backdrop-filter: blur(5px);
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.title {
+font-size: 11px;
+max-width: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+.title p {
+width: 100%;
+font-size: 10px;
+}
+
+.descriptionContent{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+.descriptionContent div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.descriptionContent div span{
+    font-size: 10px;
+}
+.card-footer {
+color: #ffffff88;
+margin-top: 5px;
+font-size: 8px;
+}
+
+.front .img {
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+backdrop-filter: blur(4px);
+}
+
+.circle {
+width: 90px;
+height: 90px;
+border-radius: 50%;
+background-color: #ffbb66;
+position: relative;
+filter: blur(15px);
+animation: floating 2600ms infinite linear;
+}
+
+#bottom {
+background-color: #ff8866;
+left: 50px;
+top: 0px;
+width: 150px;
+height: 150px;
+animation-delay: -800ms;
+}
+
+#right {
+background-color: #ff2233;
+left: 160px;
+top: -80px;
+width: 30px;
+height: 30px;
+animation-delay: -1800ms;
+}
+
+@keyframes floating {
+0% {
+    transform: translateY(0px);
+}
+
+50% {
+    transform: translateY(10px);
+}
+
+100% {
+    transform: translateY(0px);
+}
+}
+
+
+main .indexBar{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+main .indexBar svg{
+    width: 50px;
+    height: 50px;
+    fill: #ff2233;
+}
+main .indexBar svg:hover{
+    fill: #ffbb66;
+}

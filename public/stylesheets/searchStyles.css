@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family="Roboto":ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.holder {
+    height: 56px;
+    width: calc(285/305*100%) !important;
+    padding: 0px calc(10/305*100%);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    box-sizing: content-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    >input {
+        display: none;
+        height: 50% !important;
+        margin-top: 10px;
+    }
+    .selectedFilter {
+        border-radius: 4px;
+        background-color: #cecece;
+        display: flex;
+        width: fit-content !important;
+        height: fit-content !important;
+        padding: 2px;
+        flex-direction: row;
+        align-items: center;
+        font-size: 12px;
+        margin: 4px;
+    }
+    .selectedFilter.hide{
+        display:none;
+    }
+    .selectedFilter svg:focus{
+        outline:none;
+    }
+    .chipsHolder{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100% !important;
+        margin-top: 10px;
+    }
+}
+.holder.focused{
+    >input{
+        display: block;
+    }
+    .chipsHolder{
+        margin: 0;
+    }
+}
+
+.holder.focused ~ label,.holder.floatLabel ~ label {
+    position: absolute;
+    top: 0px !important;
+    left: 10px !important;
+    transform: translateY(-50%);
+    background-color: #fff;
+    padding: 0px 5px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
+    color: #303030;
+}
+
+.holder.focused ~ .select{
+    grid-template-rows: 1fr !important;
+    .hide{
+        display: none;
+    }
+}
+
+.holder ~ .select li:not(.hide):not(:has(~ li:not(.hide))){
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.searchResults {
+    /* width: calc(1280/1440*100%); */
+    /* margin: 0px 100px; */
+    width: 100%;
+}
+
+.searchResults .resultsContainer {
+    box-sizing: border-box;
+    padding: 50px calc(80/1440*100%);
+    display: grid;
+    grid-template-columns: calc(260/1280*100%) calc(1020/1280*100%);
+}
+
+.searchResults .filter .title {
+    color: #1262af;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.searchResults .resultsContainer .filter {
+    display: flex;
+    flex-direction: column;
+    word-spacing: 1px;
+    color: #57575d;
+}
+
+.searchResults .resultsContainer .filter .genres .title,
+.searchResults .resultsContainer .filter .rating .title,
+.searchResults .resultsContainer .filter .language .title,
+.searchResults .resultsContainer .filter .countries .title {
+    height: fit-content;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+.searchResults .resultsContainer .filter div {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1em; */
+}
+
+.searchResults .resultsContainer .filter {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    color: #57575d;
+    box-sizing: border-box;
+    padding: 0px 20px 0px 0px;
+}
+
+.searchResults .resultsContainer .filter .genres .title .activeGenres,
+.searchResults .resultsContainer .filter .rating .title .activeRating,
+.searchResults .resultsContainer .filter .language .title .activeLanguage,
+.searchResults .resultsContainer .filter .countries .title .activeCountries {
+    height: 40px;
+    width: 100%;
+    border: 1px solid #cecece;
+    /* box-sizing: border-box; */
+    margin: 0px 10px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.searchResults .resultsContainer .filter .genres .title .activeGenres .selectedFilter,
+.searchResults .resultsContainer .filter .activeRating .selectedFilter,
+.searchResults .resultsContainer .filter .activeLanguage .selectedFilter,
+.searchResults .resultsContainer .filter .activeCountries .selectedFilter {
+    border-radius: 4px;
+    background-color: #cecece;
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    margin: 6px;
+}
+
+.searchResults .resultsContainer .filter .genres,
+.searchResults .resultsContainer .filter .rating,
+.searchResults .resultsContainer .filter .language,
+.searchResults .resultsContainer .filter .countries {
+    display: grid;
+    border: 1px solid #cecece;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+    grid-template-rows: auto 0fr;
+    transition: 300ms ease-in-out;
+
+    >div:nth-child(2) {
+        overflow-y: hidden;
+        cursor: pointer;
+        scrollbar-width: none;
+
+        svg {
+            transition: 0.3s;
+        }
+    }
+}
+
+.searchResults .resultsContainer .filter .genres:hover,
+.searchResults .resultsContainer .filter .rating:hover,
+.searchResults .resultsContainer .filter .language:hover,
+.searchResults .resultsContainer .filter .countries:hover {
+    grid-template-rows: auto 1fr;
+
+    div>svg {
+        rotate: 180deg;
+    }
+}
+
+.searchResults .resultsSection {
+    display: grid;
+    grid-template-columns: calc(750 / 1020 * 100%) 1fr;
+}
+
+.searchResults .resultsSection .flightCards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.searchResults .resultsSection .flightCard {
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #57575d;
+}
+
+.searchResults .resultsSection .flightCard .airline {
+    display: flex;
+    width: 120px;
+    border-right: 1px solid #cecece;
+}
+
+.searchResults .resultsSection .flightCard .airline span {
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCard .flightDetails,
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .locations {
+    display: flex;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCard .flightDetails div,
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .locations div {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCard .flightDetails .departure span:nth-child(1),
+.searchResults .resultsContainer .resultsSection .flightCard .flightDetails .arrival span:nth-child(1),
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .locations .departure span:nth-child(1),
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .locations .arrival span:nth-child(1) {
+    font-size: 21px;
+    font-weight: bold;
+    color: #1262af;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCard .flightDetails .flightDuration,
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .locations .flightDuration {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #8e8e94;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCard .pricing {
+    width: 100px;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-family: "Baloo Bhai 2";
+    font-size: 24px;
+    font-weight: bold;
+    color: #fba403;
+    border-left: 0.5px solid #cecece;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCards span:nth-child(1) {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    color: #cecece;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCards .flightCard {
+    border: 0.5px solid #cecece;
+    border-radius: 6px;
+    height: 100px;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCards .flightCard .airline,
+.searchResults .resultsContainer .resultsSection .flightCards .flightCard .flightDetails {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 10px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.searchResults .resultsContainer .resultsSection .recentlyBooked {
+    margin-left: 10px;
+}
+
+.searchResults .resultsContainer .resultsSection .recentlyBooked .title {
+    color: #1262af;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #cecece;
+    margin-bottom: 14px;
+}
+
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard {
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.searchResults .resultsContainer .resultsSection .flightCards .showMore {
+    background-color: #1262af;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    width: fit-content;
+    border-radius: 4px;
+}
+
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .airlinePrice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .locations {
+    background-color: #f8f9fb;
+    border-radius: 4px;
+}
+
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCards .showMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgba(18, 98, 175, 0.1);
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    color: #1262af;
+}

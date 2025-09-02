@@ -1,0 +1,139 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --ang:0deg;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+main{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main .heroSection{
+
+}
+main .heroSection .header{
+    /* width: 100%; */
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+}
+main .heroSection .header .logo{
+    font-family: 'baloo paaji 2',sans-serif;
+}
+main .heroSection .header .navRight{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+main .heroSection .header .navRight .navMenu,main .heroSection .header .navRight .accountSection{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    gap: 30px;
+    padding-left: 0;
+}
+main .heroSection .header .navRight .navMenu li a{
+    text-decoration: none;
+    color: inherit;
+}
+main .heroSection .header .navRight .navMenu li:hover{
+    color: #1262af;
+}
+main .heroSection .header .navRight .accountSection .profileImage{
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    img{
+        border-radius: 50%;
+        margin: auto;
+        width: 36px;
+        height: 36px;
+    }
+}
+main .heroSection .header .navRight .accountSection svg{
+    circle{
+        fill:transparent;
+    }
+}
+main .heroSection .header .navRight .accountSection svg:hover{
+    circle{
+        fill: #f99a0e;
+        stroke: white;
+    }
+}
+main .heroSection .header .navRight .accountSection .profileImage:hover{
+    img{
+        border: 2px solid #1262af;
+    }
+}
+main .heroSection .searchSection{
+    padding: 160px 140px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: linear-gradient(135deg,#114f8b,#2a9ad7);
+}
+main .heroSection .searchSection .title{
+    text-align: center;
+}
+main .heroSection .searchSection .title h2{
+    font-size: 64px;
+    font-family: 'baloo paaji 2', sans-serif;
+}
+main .heroSection .searchSection .title p{
+    font-size: 24px;
+    font-family: 'roboto',sans-serif;
+}
+main .heroSection .searchSection .searchForm{
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+main .heroSection .searchSection .titleGroup{
+    padding: 20px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+main .heroSection .searchSection .inputRow{
+    padding:10px 20px 20px 20px;
+    display:flex;
+    gap: 5px;
+}
+main .heroSection .searchSection .searchForm .inputRow:nth-child(2){
+    padding: 5px 20px 0px 20px;
+}
+main .heroSection .searchSection .inputRow div input{
+    width: 280px;
+    height: 50px;
+    padding: 0px 10px;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+}
+main .heroSection .searchSection .inputRow div{
+    position: relative;
+}
+main .heroSection .searchSection .inputRow div label{
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    transition: 0.3s;
+}
+main .heroSection .searchSection .inputRow div input:focus + label,main .heroSection .searchSection .inputRow div input + label{
+    top: -10px;
+}
+main .heroSection .searchSection .inputRow div input:focus{
+    outline: none;
+}
+main .heroSection .searchSection .titleGroup p{
+    font-family: 'roboto',sans-serif;
+    font-weight: bold;
+    font-size:20px;
+}

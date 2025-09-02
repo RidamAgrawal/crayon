@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.heroSection{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px calc(80 / 1440 * 100%);
+}
+.heroSection .poster{
+    width: 100%;
+    max-width: 400px;
+}
+.heroSection .poster .moviePoster{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    position:relative;
+    border-radius: 40px;
+}
+.heroSection .movieDetails{
+    width: calc(880 / 1280 * 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+}
+.heroSection .movieDetails .title{
+    font-family: 'Baloo Bhai 2',sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    flex-shrink: 1;
+}
+.heroSection .movieDetails .movieContent{
+    display: flex;
+}
+.heroSection .movieDetails .movieContent .aboutMovie{
+    width: calc(600 * 100% / 1280);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: baseline;
+    flex-grow: 1;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .genres,.heroSection .movieDetails .movieContent .aboutMovie .ratings{
+    width: 100%;
+    display: flex;
+    /* margin: 0 calc(20 * 100% / 600); */
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .ratings{
+    width: fit-content;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .genres span{
+    background-color: rgba(18,98,175,0.4);
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 0 calc(10 * 100% / 600);
+}
+.heroSection .movieDetails .movieContent .aboutMovie .ratings{
+    background-color: rgba(42,154,215,0.4);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .ratings div{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .ratings div span{
+    font-family: 'Roboto',sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0 calc(10 * 100% / 600);
+}
+.heroSection .movieDetails .movieContent .aboutMovie .ratings svg{
+    height: 24px;
+    width: 24px;
+    fill: black;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .plot{
+    margin: 30px 0px;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .plot p{
+    display: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .plot div{
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .plot p.show{
+    display:inline-block;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .plot div.show{
+    display:flex;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .plot div span{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #1262af;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons{
+
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(1){
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+    background-color: #1262af;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(2){
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #1262af;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #1262af;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(1):hover{
+    color: #1262af;
+    background-color: white;
+    border: 1px solid #1262af;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(2):hover{
+    color: white;
+    background-color: #1262af;
+}
+.heroSection .movieDetails .movieContent .makers{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-sizing: border-box;
+    padding-left: 40px;
+    /* width: 600px; */
+}
+.heroSection .movieDetails .movieContent .makers .directors,.heroSection .movieDetails .movieContent .makers .writers,.heroSection .movieDetails .movieContent .makers .cast{
+    border-top: 1px solid #cecece;
+    div{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.heroSection .movieDetails .movieContent .makers .directors .content,.heroSection .movieDetails .movieContent .makers .writers .content,.heroSection .movieDetails .movieContent .makers .cast .content{
+    display: flex;
+    flex-direction: column;
+    span:nth-child(1){
+        color: #1262af;
+        font-family: 'Roboto',sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+    }
+    div{
+        font-family: 'Roboto',sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
+.commentsSection{
+    width: 100%;
+    position: relative;
+}
+.commentsSection img{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: round;
+    z-index: -1;
+}
+.commentsSection .commentsContainer{
+    margin: 167.5px calc(100 / 1440 * 100%) 167.5px calc(100 / 1440 * 100%);
+    padding: calc(40 / 1160 * 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: calc(158 / 641 * 100%);
+    z-index: 1;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    font-family: "Roboto", sans-serif;
+}
+.commentsSection .commentsContainer .textbox{
+    width: 100%;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+}
+.commentsSection .commentsContainer .textbox textarea{
+    width: 100%;
+    height: 80px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    resize: vertical;
+    border: none;
+    background-color: #EAEAEA;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color:grey;
+    font-family: 'baloo bhai 2';
+    font-weight: 300;
+    font-size: 20px;
+}
+.commentsSection .commentsContainer .textbox textarea:focus{
+    outline:none;
+}
+.commentsContainer .textbox .commentBoxBottom,.commentsContainer .textbox .commentBoxBottom .bottomMenu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.commentsContainer .textbox .commentBoxBottom{
+    padding: 10px 20px;
+}
+.commentsContainer .textbox .commentBoxBottom .bottomMenu hr{
+    height: 24px;
+    background-color: darkgrey;
+}
+.commentsSection .commentsContainer .textbox .commentBoxBottom .additionals,.commentsSection .commentsContainer .textbox .commentBoxBottom .textModifiers,.commentsContainer .textbox .commentBoxBottom button{
+    svg{
+        fill:darkgrey;
+    }
+    svg:hover{
+        fill:#424242;
+    }
+}
+.commentsContainer .textbox .caution{
+    color: red;
+    text-align: center;
+    margin-right: 10px;
+    float: right;
+}
+.commentsContainer .textbox .caution.hide{
+    visibility: hidden;
+}
+
+/* .commentsContainer .textbox .commentBoxBottom button{
+    background-color: #f99a0e;
+    color: white;
+    border: none;
+    width: calc(164 / 1120 * 100%);
+    padding: 10px calc(10 / 1120 * 100%);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'baloo bhai 2';
+} */
+.commentsContainer .textbox .commentBoxBottom button{
+    border: none;
+    background-color: transparent;
+}
+.commentsSection .commentsContainer .commentsHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.commentsSection .commentsContainer .commentsHeader .commentsHeaderTitle{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.commentsSection .commentsContainer .commentsHeader .commentsHeaderTitle .commentCount{
+    background-color: #f99a0e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+.commentsSection .commentsContainer .commentsHeader .commentsFilter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.commentsSection .commentsContainer .comment{
+    width: 100%;
+}
+.commentsSection .commentsContainer .comment .thumbicon img{
+    position: relative;
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+}
+.commentsSection .commentsContainer .comment .user{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Roboto';
+}
+.commentsSection .commentsContainer .comment .commentMenu,.commentsSection .commentsContainer .comment .commentBody{
+    margin-left: 36px;
+}
+.commentsSection .commentsContainer .comment .commentMenu{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}

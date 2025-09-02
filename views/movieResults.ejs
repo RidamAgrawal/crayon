@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH| Crayon_21Movies</title>
+    <link rel="stylesheet" href="/stylesheets/movieHome.css">
+    <link rel="stylesheet" href="/stylesheets/searchStyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="searchResults">
+    <div class="modal">
+        <div class="modalContent">
+            <div>
+                <div class="modalContentSection loginSection">
+                    <div class="formHeader">
+                        <span>USER LOGIN</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="signin">
+                        <div class="login">
+                            <input id="loginEmail" type="email" for="loginEmail" placeholder="">
+                            <label for="loginEmail">Email address</label>
+                        </div>
+                        <div class="login">
+                            <input id="loginPassword" type="password" for="loginPassword" placeholder="">
+                            <label for="loginPassword">Password</label>
+                        </div>
+                        <button type="button" onclick="login(this)">LOGIN</button>
+                    </form>
+                </div>
+                <div class="modalContentSection signupSection">
+                    <div class="formHeader">
+                        <span>USER SIGNUP</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="register">
+                        <span>Please fill in to become a member of this Family!</span>
+                        <div class="signup">
+                            <input id="signupName" type="text" for="signupName" placeholder="">
+                            <label for="signupName">Your name</label>
+                        </div>
+                        <div class="signup">
+                            <input id="signupEmail" type="email" for="signupEmail" placeholder="">
+                            <label for="signupEmail">Email address</label>
+                        </div>
+                        <div class="signup">
+                            <input id="signupPassword" type="password" for="signupPassword" placeholder="">
+                            <label for="signupPassword">Password</label>
+                        </div>
+                        <div class="signup">
+                            <input id="signupAvatar" type="text" for="signupAvatar" data-value="1">
+                            <label for="signupAvatar">Avatar</label>
+                            <div class="avatars">
+                                <div class="avatarIcon selected" data-avatar="1"><img data-avatar="1"
+                                        src="/images/1.jpg" alt="avatar1"></div>
+                                <div class="avatarIcon" data-avatar="2"><img data-avatar="2" src="/images/2.jpg"
+                                        alt="avatar2"></div>
+                                <div class="avatarIcon" data-avatar="3"><img data-avatar="3" src="/images/3.jpg"
+                                        alt="avatar3"></div>
+                                <div class="avatarIcon" data-avatar="4"><img data-avatar="4" src="/images/4.jpg"
+                                        alt="avatar4"></div>
+                                <div class="avatarIcon" data-avatar="5"><img data-avatar="5" src="/images/5.jpg"
+                                        alt="avatar5"></div>
+                                <div class="avatarIcon" data-avatar="6"><img data-avatar="6" src="/images/6.jpg"
+                                        alt="avatar6"></div>
+                                <div class="avatarIcon" data-avatar="7"><img data-avatar="7" src="/images/7.jpg"
+                                        alt="avatar7"></div>
+                                <div class="avatarIcon" data-avatar="8"><img data-avatar="8" src="/images/8.jpg"
+                                        alt="avatar8"></div>
+                                <div class="avatarIcon" data-avatar="9"><img data-avatar="9" src="/images/9.jpg"
+                                        alt="avatar9"></div>
+                                <div class="avatarIcon" data-avatar="10"><img data-avatar="10" src="/images/10.jpg"
+                                        alt="avatar10"></div>
+                                <div class="avatarIcon" data-avatar="11"><img data-avatar="11" src="/images/11.jpg"
+                                        alt="avatar11"></div>
+                                <div class="avatarIcon" data-avatar="12"><img data-avatar="12" src="/images/12.jpg"
+                                        alt="avatar12"></div>
+                                <div class="avatarIcon" data-avatar="13"><img data-avatar="13" src="/images/13.jpg"
+                                        alt="avatar13"></div>
+                                <div class="avatarIcon" data-avatar="14"><img data-avatar="14" src="/images/14.jpg"
+                                        alt="avatar14"></div>
+                                <div class="avatarIcon" data-avatar="15"><img data-avatar="15" src="/images/15.jpg"
+                                        alt="avatar15"></div>
+                                <div class="avatarIcon" data-avatar="16"><img data-avatar="16" src="/images/16.jpg"
+                                        alt="avatar16"></div>
+                                <div class="avatarIcon" data-avatar="17"><img data-avatar="17" src="/images/17.jpg"
+                                        alt="avatar17"></div>
+                                <div class="avatarIcon" data-avatar="18"><img data-avatar="18" src="/images/18.jpg"
+                                        alt="avatar18"></div>
+                                <div class="avatarIcon" data-avatar="19"><img data-avatar="19" src="/images/19.jpg"
+                                        alt="avatar19"></div>
+                                <div class="avatarIcon" data-avatar="20"><img data-avatar="20" src="/images/20.jpg"
+                                        alt="avatar20"></div>
+                                <div class="avatarIcon" data-avatar="21"><img data-avatar="21" src="/images/21.jpg"
+                                        alt="avatar21"></div>
+                                <div class="avatarIcon" data-avatar="22"><img data-avatar="22" src="/images/22.jpg"
+                                        alt="avatar22"></div>
+                                <div class="avatarIcon" data-avatar="23"><img data-avatar="23" src="/images/23.jpg"
+                                        alt="avatar23"></div>
+                                <div class="avatarIcon" data-avatar="24"><img data-avatar="24" src="/images/24.jpg"
+                                        alt="avatar24"></div>
+                                <div class="avatarIcon" data-avatar="25"><img data-avatar="25" src="/images/25.jpg"
+                                        alt="avatar25"></div>
+                                <div class="avatarIcon" data-avatar="26"><img data-avatar="26" src="/images/26.jpg"
+                                        alt="avatar26"></div>
+                                <div class="avatarIcon" data-avatar="27"><img data-avatar="27" src="/images/27.jpg"
+                                        alt="avatar27"></div>
+                                <div class="avatarIcon" data-avatar="28"><img data-avatar="28" src="/images/28.jpg"
+                                        alt="avatar28"></div>
+                                <div class="avatarIcon" data-avatar="29"><img data-avatar="29" src="/images/29.jpg"
+                                        alt="avatar29"></div>
+                                <div class="avatarIcon" data-avatar="30"><img data-avatar="30" src="/images/30.jpg"
+                                        alt="avatar30"></div>
+                                <div class="avatarIcon" data-avatar="31"><img data-avatar="31" src="/images/31.jpg"
+                                        alt="avatar31"></div>
+                                <div class="avatarIcon" data-avatar="32"><img data-avatar="32" src="/images/32.jpg"
+                                        alt="avatar32"></div>
+                                <div class="avatarIcon" data-avatar="33"><img data-avatar="33" src="/images/33.jpg"
+                                        alt="avatar33"></div>
+                                <div class="avatarIcon" data-avatar="34"><img data-avatar="34" src="/images/34.jpg"
+                                        alt="avatar34"></div>
+                                <div class="avatarIcon" data-avatar="35"><img data-avatar="35" src="/images/35.jpg"
+                                        alt="avatar35"></div>
+                                <div class="avatarIcon" data-avatar="36"><img data-avatar="36" src="/images/36.jpg"
+                                        alt="avatar36"></div>
+                            </div>
+                        </div>
+                        <button type="button" onclick="signup(this)">SIGNUP</button>
+                    </form>
+                </div>
+                <div class="modalContentSection logoutSection">
+                    <div class="formHeader">
+                        <span>LOGOUT</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="logout">
+                        <span>Do You Really Want to Logout?</span>
+                        <button type="button" onclick="logout()">LOGOUT</button>
+                    </form>
+                </div>
+                <div class="modalContentSection updateProfile">
+                    <div class="formHeader">
+                        <span>UPDATE PROFILE</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="update">
+                        <span>Please Click Edit Icon to Change fields</span>
+                        <div class="update">
+                            <input id="updateName" type="text" for="updateName" placeholder="">
+                            <label for="updateName">Your name</label>
+                        </div>
+                        <div class="update">
+                            <input id="updateAvatar" type="text" for="updateAvatar">
+                            <label for="updateAvatar">Avatar</label>
+                            <div class="avatars">
+                                <div class="avatarIcon" data-avatar="1"><img data-avatar="1" src="/images/1.jpg"
+                                        alt="avatar1"></div>
+                                <div class="avatarIcon" data-avatar="2"><img data-avatar="2" src="/images/2.jpg"
+                                        alt="avatar2"></div>
+                                <div class="avatarIcon" data-avatar="3"><img data-avatar="3" src="/images/3.jpg"
+                                        alt="avatar3"></div>
+                                <div class="avatarIcon" data-avatar="4"><img data-avatar="4" src="/images/4.jpg"
+                                        alt="avatar4"></div>
+                                <div class="avatarIcon" data-avatar="5"><img data-avatar="5" src="/images/5.jpg"
+                                        alt="avatar5"></div>
+                                <div class="avatarIcon" data-avatar="6"><img data-avatar="6" src="/images/6.jpg"
+                                        alt="avatar6"></div>
+                                <div class="avatarIcon" data-avatar="7"><img data-avatar="7" src="/images/7.jpg"
+                                        alt="avatar7"></div>
+                                <div class="avatarIcon" data-avatar="8"><img data-avatar="8" src="/images/8.jpg"
+                                        alt="avatar8"></div>
+                                <div class="avatarIcon" data-avatar="9"><img data-avatar="9" src="/images/9.jpg"
+                                        alt="avatar9"></div>
+                                <div class="avatarIcon" data-avatar="10"><img data-avatar="10" src="/images/10.jpg"
+                                        alt="avatar10"></div>
+                                <div class="avatarIcon" data-avatar="11"><img data-avatar="11" src="/images/11.jpg"
+                                        alt="avatar11"></div>
+                                <div class="avatarIcon" data-avatar="12"><img data-avatar="12" src="/images/12.jpg"
+                                        alt="avatar12"></div>
+                                <div class="avatarIcon" data-avatar="13"><img data-avatar="13" src="/images/13.jpg"
+                                        alt="avatar13"></div>
+                                <div class="avatarIcon" data-avatar="14"><img data-avatar="14" src="/images/14.jpg"
+                                        alt="avatar14"></div>
+                                <div class="avatarIcon" data-avatar="15"><img data-avatar="15" src="/images/15.jpg"
+                                        alt="avatar15"></div>
+                                <div class="avatarIcon" data-avatar="16"><img data-avatar="16" src="/images/16.jpg"
+                                        alt="avatar16"></div>
+                                <div class="avatarIcon" data-avatar="17"><img data-avatar="17" src="/images/17.jpg"
+                                        alt="avatar17"></div>
+                                <div class="avatarIcon" data-avatar="18"><img data-avatar="18" src="/images/18.jpg"
+                                        alt="avatar18"></div>
+                                <div class="avatarIcon" data-avatar="19"><img data-avatar="19" src="/images/19.jpg"
+                                        alt="avatar19"></div>
+                                <div class="avatarIcon" data-avatar="20"><img data-avatar="20" src="/images/20.jpg"
+                                        alt="avatar20"></div>
+                                <div class="avatarIcon" data-avatar="21"><img data-avatar="21" src="/images/21.jpg"
+                                        alt="avatar21"></div>
+                                <div class="avatarIcon" data-avatar="22"><img data-avatar="22" src="/images/22.jpg"
+                                        alt="avatar22"></div>
+                                <div class="avatarIcon" data-avatar="23"><img data-avatar="23" src="/images/23.jpg"
+                                        alt="avatar23"></div>
+                                <div class="avatarIcon" data-avatar="24"><img data-avatar="24" src="/images/24.jpg"
+                                        alt="avatar24"></div>
+                                <div class="avatarIcon" data-avatar="25"><img data-avatar="25" src="/images/25.jpg"
+                                        alt="avatar25"></div>
+                                <div class="avatarIcon" data-avatar="26"><img data-avatar="26" src="/images/26.jpg"
+                                        alt="avatar26"></div>
+                                <div class="avatarIcon" data-avatar="27"><img data-avatar="27" src="/images/27.jpg"
+                                        alt="avatar27"></div>
+                                <div class="avatarIcon" data-avatar="28"><img data-avatar="28" src="/images/28.jpg"
+                                        alt="avatar28"></div>
+                                <div class="avatarIcon" data-avatar="29"><img data-avatar="29" src="/images/29.jpg"
+                                        alt="avatar29"></div>
+                                <div class="avatarIcon" data-avatar="30"><img data-avatar="30" src="/images/30.jpg"
+                                        alt="avatar30"></div>
+                                <div class="avatarIcon" data-avatar="31"><img data-avatar="31" src="/images/31.jpg"
+                                        alt="avatar31"></div>
+                                <div class="avatarIcon" data-avatar="32"><img data-avatar="32" src="/images/32.jpg"
+                                        alt="avatar32"></div>
+                                <div class="avatarIcon" data-avatar="33"><img data-avatar="33" src="/images/33.jpg"
+                                        alt="avatar33"></div>
+                                <div class="avatarIcon" data-avatar="34"><img data-avatar="34" src="/images/34.jpg"
+                                        alt="avatar34"></div>
+                                <div class="avatarIcon" data-avatar="35"><img data-avatar="35" src="/images/35.jpg"
+                                        alt="avatar35"></div>
+                                <div class="avatarIcon" data-avatar="36"><img data-avatar="36" src="/images/36.jpg"
+                                        alt="avatar36"></div>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <input id="updatePassword" type="password" for="updatePassword" placeholder="">
+                            <label for="updatePassword">Password</label>
+                        </div>
+                        <button type="button" onclick="changeProfile()">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <div>Crayon_21</div>
+                <div id="ghost">
+                    <div id="red">
+                        <div id="pupil"></div>
+                        <div id="pupil1"></div>
+                        <div id="eye"></div>
+                        <div id="eye1"></div>
+                        <div id="top0"></div>
+                        <div id="top1"></div>
+                        <div id="top2"></div>
+                        <div id="top3"></div>
+                        <div id="top4"></div>
+                        <div id="st0"></div>
+                        <div id="st1"></div>
+                        <div id="st2"></div>
+                        <div id="st3"></div>
+                        <div id="st4"></div>
+                        <div id="st5"></div>
+                        <div id="an1"></div>
+                        <div id="an2"></div>
+                        <div id="an3"></div>
+                        <div id="an4"></div>
+                        <div id="an5"></div>
+                        <div id="an6"></div>
+                        <div id="an7"></div>
+                        <div id="an8"></div>
+                        <div id="an9"></div>
+                        <div id="an10"></div>
+                        <div id="an11"></div>
+                        <div id="an12"></div>
+                        <div id="an13"></div>
+                        <div id="an14"></div>
+                        <div id="an15"></div>
+                        <div id="an16"></div>
+                        <div id="an17"></div>
+                        <div id="an18"></div>
+                    </div>
+                    <div id="shadow"></div>
+                </div>
+            </div>
+            <div class="navRight">
+                <ul class="navMenu">
+                    <li><a href="/movieHome">Explore</a></li>
+                    <li class="active">Search</li>
+                    <li>Hotels</li>
+                    <li>Offers</li>
+                </ul>
+                <div class="accountsSection">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21.6732 19.0531C21.0303 18.48 20.4675 17.823 19.9999 17.0998C19.4894 16.1015 19.1834 15.0113 19.0999 13.8931V10.5998C19.1043 8.84351 18.4672 7.14609 17.3084 5.82642C16.1495 4.50675 14.5486 3.65568 12.8065 3.43311V2.57311C12.8065 2.33706 12.7128 2.11069 12.5459 1.94378C12.379 1.77687 12.1526 1.68311 11.9165 1.68311C11.6805 1.68311 11.4541 1.77687 11.2872 1.94378C11.1203 2.11069 11.0265 2.33706 11.0265 2.57311V3.44644C9.30004 3.68506 7.71852 4.54128 6.57489 5.85651C5.43126 7.17174 4.80302 8.85687 4.80654 10.5998V13.8931C4.72304 15.0113 4.41705 16.1015 3.90654 17.0998C3.44712 17.8213 2.89333 18.4783 2.25987 19.0531C2.18876 19.1156 2.13176 19.1925 2.09268 19.2787C2.0536 19.3649 2.03332 19.4585 2.0332 19.5531V20.4598C2.0332 20.6366 2.10344 20.8062 2.22847 20.9312C2.35349 21.0562 2.52306 21.1264 2.69987 21.1264H21.2332C21.41 21.1264 21.5796 21.0562 21.7046 20.9312C21.8296 20.8062 21.8999 20.6366 21.8999 20.4598V19.5531C21.8997 19.4585 21.8795 19.3649 21.8404 19.2787C21.8013 19.1925 21.7443 19.1156 21.6732 19.0531ZM3.41987 19.7931C4.04014 19.1939 4.58627 18.5224 5.04654 17.7931C5.68961 16.5874 6.06482 15.2571 6.14654 13.8931V10.5998C6.1201 9.81846 6.25115 9.03982 6.5319 8.31022C6.81265 7.58061 7.23734 6.91496 7.7807 6.35291C8.32406 5.79085 8.97496 5.34388 9.69466 5.03862C10.4143 4.73336 11.1881 4.57604 11.9699 4.57604C12.7516 4.57604 13.5254 4.73336 14.2451 5.03862C14.9648 5.34388 15.6157 5.79085 16.159 6.35291C16.7024 6.91496 17.1271 7.58061 17.4078 8.31022C17.6886 9.03982 17.8196 9.81846 17.7932 10.5998V13.8931C17.8749 15.2571 18.2501 16.5874 18.8932 17.7931C19.3535 18.5224 19.8996 19.1939 20.5199 19.7931H3.41987Z"
+                            fill="#424242" />
+                        <path
+                            d="M12 23.3135C12.42 23.3038 12.823 23.1459 13.1378 22.8677C13.4526 22.5896 13.6588 22.209 13.72 21.7935H10.2134C10.2764 22.2203 10.4923 22.6098 10.8209 22.8894C11.1496 23.169 11.5686 23.3197 12 23.3135Z"
+                            fill="#424242" />
+                        <circle cx="18.4565" cy="5.93701" r="3.5" fill="transparent" />
+                    </svg>
+                    <div class="profileImage">
+                        <img src="images/1.jpg" />
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                            fill="#424242">
+                            <path
+                                d="M234.97-258.15q56.95-40.16 116.53-62.62T480-343.23q68.92 0 128.7 22.46 59.79 22.46 116.74 62.62 41.51-47.36 62.91-102.79 21.39-55.44 21.39-119.06 0-138.69-95.52-234.22-95.53-95.52-234.22-95.52t-234.22 95.52Q150.26-618.69 150.26-480q0 63.62 21.6 119.06 21.6 55.43 63.11 102.79Zm244.89-196.72q-54.22 0-91.3-37.22-37.07-37.22-37.07-91.44 0-54.21 37.22-91.29 37.21-37.08 91.43-37.08 54.22 0 91.3 37.22 37.07 37.22 37.07 91.44 0 54.21-37.22 91.29-37.21 37.08-91.43 37.08Zm.45 354.87q-79.05 0-148.33-29.77-69.27-29.77-120.85-81.41-51.59-51.64-81.36-120.7Q100-400.94 100-480.05q0-79.1 29.77-148.12 29.77-69.01 81.41-120.65t120.7-81.41Q400.94-860 480.05-860q79.1 0 148.12 29.77 69.01 29.77 120.65 81.41t81.41 120.68Q860-559.11 860-480.31q0 79.05-29.77 148.33-29.77 69.27-81.41 120.85-51.64 51.59-120.68 81.36Q559.11-100 480.31-100Zm-.31-50.26q55.23 0 108.14-17.62 52.91-17.63 97.86-54.48-44.95-33.54-97.04-52.08T480-292.98q-56.87 0-109.15 18.35-52.29 18.35-96.59 52.27 44.69 36.85 97.6 54.48 52.91 17.62 108.14 17.62Zm.04-354.87q33.86 0 56.04-22.21 22.18-22.22 22.18-56.08t-22.22-56.04q-22.21-22.18-56.08-22.18-33.86 0-56.04 22.21-22.18 22.22-22.18 56.08t22.22 56.04q22.21 22.18 56.08 22.18Zm-.04-78.25Zm0 361.76Z" />
+                        </svg>
+                        <ul class="select">
+                            <div>
+                                <li onclick="openModal(1)">Signup</li>
+                                <li onclick="openModal(0)">Login</li>
+                                <li onclick="openModal(2)">Logout</li>
+                                <li onclick="openModal(3)">Update</li>
+                                <li>More...</li>
+                                <li class="indicator"></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="heroSection">
+        <img src="/images/subscribeBackground.png">
+        <div class="searchContainer">
+            <div class="title">
+                <h2>what are you off too?</h2>
+                <!-- <p>Find the best destinations and the most popular stays!</p> -->
+            </div>
+            <div class="searchForm">
+                <div class="titleGroup">
+                    <p>SEARCH MOVIE</p>
+                </div>
+                <div class="inputRow">
+                    <div>
+                        <input id="searchInput" type="text" placeholder="">
+                        <label for="searchInput">movie</label>
+                        <ul class="select hide"></ul>
+                    </div>
+                    <button id="searchBtn" onclick="showNew()">SEARCH</button>
+                </div>
+                <div class="caution searchCaution hide"><span>*search cannot be empty</span></div>
+                <div class="titleGroup">
+                    <p>FILTER MOVIES</p>
+                </div>
+                <div class="inputRow">
+                    <!-- <div>
+                        <input type="text" id="rating" placeholder="">
+                        <label for="rating">rating</label>
+                        <ul class="select hide">
+                            <div>
+                                <li data-rating="All">All</li>
+                                <li data-rating="Above 9">Above 9</li>
+                                <li data-rating="Above 8">Above 8</li>
+                                <li data-rating="Above 7">Above 7</li>
+                                <li data-rating="Above 6">Above 6</li>
+                                <li data-rating="Above 5">Above 5</li>
+                                <li data-rating="Above 4">Above 4</li>
+                                <li data-rating="Above 3">Above 3</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="text" id="language" placeholder="">
+                        <label for="language">language</label>
+                        <ul class="select hide">
+                            <div>
+                                <li data-language="English">English</li>
+                                <li data-language="Spanish">Spanish</li>
+                                <li data-language="French">French</li>
+                                <li data-language="Mandarin">Mandarin</li>
+                                <li data-language="Hindi">Hindi</li>
+                                <li data-language="Arabic">Arabic</li>
+                                <li data-language="German">German</li>
+                                <li data-language="Japanese">Japanese</li>
+                                <li data-language="Italian">Italian</li>
+                                <li data-language="Portuguese">Portuguese</li>
+                                <li data-language="Korean">Korean</li>
+                                <li data-language="Russian">Russian</li>
+                                <li data-language="Turkish">Turkish</li>
+                            </div>
+                        </ul>
+                    </div> -->
+                    <!-- <button>SEARCH FLIGHTS</button> -->
+                </div>
+                <div class="inputRow">
+                    <!-- <div>
+                        <input type="text" id="countries" placeholder="">
+                        <label for="countries">countries</label>
+                        <ul class="select hide">
+                            <div>
+                                <li data-countries="USA">USA</li>
+                                <li data-countries="India">India</li>
+                                <li data-countries="China">China</li>
+                                <li data-countries="UK">UK</li>
+                                <li data-countries="France">France</li>
+                                <li data-countries="Japan">Japan</li>
+                                <li data-countries="South">South Korea</li>
+                                <li data-countries="Italy">Italy</li>
+                                <li data-countries="Mexico">Mexico</li>
+                                <li data-countries="Germany">Germany</li>
+                                <li data-countries="Spain">Spain</li>
+                                <li data-countries="Australia">Australia</li>
+                                <li data-countries="Brazil">Brazil</li>
+                                <li data-countries="Russia">Russia</li>
+                                <li data-countries="Turkey">Turkey</li>
+                            </div>
+                        </ul>
+                    </div> -->
+                    <div>
+                        <input type="number" id="duration" placeholder="">
+                        <label for="duration">duration</label>
+                    </div>
+                    <div>
+                        <input type="number" id="year" placeholder="">
+                        <label for="year">year</label>
+                    </div>
+                    <button id="filterBtn" onclick="showNew()">FILTER</button>
+                </div>
+                <div class="caution filterCaution hide"><span>*filters cannot be empty</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="searchResults">
+        <div class="resultsContainer">
+            <div class="filter">
+                <p class="title">FILTER</p>
+                <!-- <div class="activeFilters">
+                    <div class="activeGenres"></div>
+                    <div class="activeRating"></div>
+                    <div class="activeLanguage"></div>
+                    <div class="activeCountries"></div>
+                </div> -->
+                <div class="genres">
+                    <div class="title">
+                        <span>Genres</span>
+                        <div class="activeGenres"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#424242">
+                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Action" value="Action"
+                                    id="genres-Action" />
+                                <div class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Action</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Adventure" value="Adventure"
+                                    id="genres-Adventure" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Adventure</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Animation" value="Animation"
+                                    id="genres-Animation" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Animation</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Biography" value="Biography"
+                                    id="genres-Biography" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Biography</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Comedy" value="Comedy"
+                                    id="genres-Comedy" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Comedy</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Crime" value="Crime"
+                                    id="genres-Crime" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Crime</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Documentary"
+                                    value="Documentary" id="genres-Documentary" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Documentary</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Drama" value="Drama"
+                                    id="genres-Drama" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Drama</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Family" value="Family"
+                                    id="genres-Family" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Family</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Fantasy" value="Fantasy"
+                                    id="genres-Fantasy" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Fantasy</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Film" value="Film"
+                                    id="genres-Film" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Film</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="History" value="History"
+                                    id="genres-History" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">History</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Horror" value="Horror"
+                                    id="genres-Horror" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Horror</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Music" value="Music"
+                                    id="genres-Music" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Music</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Musical" value="Musical"
+                                    id="genres-Musical" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Musical</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Mystery" value="Mystery"
+                                    id="genres-Mystery" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Mystery</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="News" value="News"
+                                    id="genres-News" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">News</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Romance" value="Romance"
+                                    id="genres-Romance" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Romance</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Sci-fi" value="Sci"
+                                    id="genres-Sci-fi" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Sci-fi</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Short" value="Short"
+                                    id="genres-Short" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Short</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Sport" value="Sport"
+                                    id="genres-Sport" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Sport</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Talk" value="Talk"
+                                    id="genres-Talk" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Talk</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Thriller" value="Thriller"
+                                    id="genres-Thriller" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Thriller</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="War" value="War"
+                                    id="genres-War" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">War</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-genres="Western" value="Western"
+                                    id="genres-Western" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Western</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="title">
+                        <span>Rating</span>
+                        <div class="activeRating"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#424242">
+                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="All" value="All"
+                                    id="rating-All" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">All</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="Above 9" value="Above 9"
+                                    id="rating-Above 9" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Above 9</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="Above 8" value="Above 8"
+                                    id="rating-Above 8" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Above 8</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="Above 7" value="Above 7"
+                                    id="rating-Above 7" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Above 7</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="Above 6" value="Above 6"
+                                    id="rating-Above 6" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Above 6</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="Above 5" value="Above 5"
+                                    id="rating-Above 5" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Above 5</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="Above 4" value="Above 4"
+                                    id="rating-Above 4" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Above 4</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-rating="Above 3" value="Above 3"
+                                    id="rating-Above 3" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Above 3</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                <div class="language">
+                    <div class="title">
+                        <span>Language</span>
+                        <div class="activeLanguage"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#424242">
+                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="English" value="English"
+                                    id="language-English" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">English</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Spanish" value="Spanish"
+                                    id="language-Spanish" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Spanish</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="French" value="French"
+                                    id="language-French" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">French</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Mandarin" value="Mandarin"
+                                    id="language-Mandarin" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Mandarin</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Hindi" value="Hindi"
+                                    id="language-Hindi" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Hindi</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Arabic" value="Arabic"
+                                    id="language-Arabic" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Arabic</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="German" value="German"
+                                    id="language-German" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">German</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Japanese" value="Japanese"
+                                    id="language-Japanese" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Japanese</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Italian" value="Italian"
+                                    id="language-Italian" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Italian</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Portuguese"
+                                    value="Portuguese" id="language-Portuguese" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Portuguese</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Korean" value="Korean"
+                                    id="language-Korean" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Korean</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Russian" value="Russian"
+                                    id="language-Russian" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Russian</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-language="Turkish" value="Turkish"
+                                    id="language-Turkish" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Turkish</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                <div class="countries">
+                    <div class="title">
+                        <span>Countries</span>
+                        <div class="activeCountries"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#424242">
+                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="USA" value="USA"
+                                    id="countries-USA" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">USA</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="India" value="India"
+                                    id="countries-India" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">India</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="China" value="China"
+                                    id="countries-China" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">China</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="UK" value="UK"
+                                    id="countries-UK" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">UK</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="France" value="France"
+                                    id="countries-France" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">France</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Japan" value="Japan"
+                                    id="countries-Japan" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Japan</span>
+                            </label>
+                        </span>
+                        <spanKorea">
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="South Korea"
+                                    value="South Korea" id="countries-South Korea" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">South Korea</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Italy" value="Italy"
+                                    id="countries-Italy" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Italy</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Mexico" value="Mexico"
+                                    id="countries-Mexico" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Mexico</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Germany" value="Germany"
+                                    id="countries-Germany" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Germany</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Spain" value="Spain"
+                                    id="countries-Spain" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Spain</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Australia" value="Australia"
+                                    id="countries-Australia" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Australia</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Brazil" value="Brazil"
+                                    id="countries-Brazil" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Brazil</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Russia" value="Russia"
+                                    id="countries-Russia" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Russia</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label class="relative flex items-center gap-2 cursor-pointer group">
+                                <input class="peer sr-only" type="checkbox" data-countries="Turkey" value="Turkey"
+                                    id="countries-Turkey" />
+                                <div
+                                    class="w-4 h-4 rounded bg-white border-2 border-sky-800 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-sky-700 to-sky-500 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-3 after:h-3 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(18,98,175,0.5)]">
+                                </div>
+                                <span class="ml-3 text-sm font-medium text-gray-900">Turkey</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="resultsSection">
+                <div class="flightCardsContainer">
+                    <div class="flightCards">
+                        <div>
+                            <span>10 out of 177 Results</span>
+                        </div>
+                        <div class="flightCard">
+                            <div class="airline">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.384 2.0842C8.7755 2.0842 1.73053 9.2875 1.73053 18.2577C1.73053 27.2272 8.77613 34.4299 17.384 34.4299C25.9911 34.4299 33.036 27.2273 33.036 18.2577C33.036 9.28747 25.9903 2.0842 17.384 2.0842ZM0.176758 18.2577C0.176758 8.52447 7.8415 0.564697 17.384 0.564697C26.9244 0.564697 34.5898 8.5245 34.5898 18.2577C34.5898 27.9903 26.9251 35.9494 17.384 35.9494C7.84229 35.9494 0.176758 27.9904 0.176758 18.2577Z"
+                                        fill="#CF4037" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.3444 14.545C21.5874 9.29753 17.164 6.70646 14.4009 5.15432C11.8366 3.71468 9.5407 3.06049 9.48531 3.22924C12.4018 5.57447 14.2745 9.22808 14.2745 13.3331C14.2745 20.0646 9.23534 25.5836 2.8335 26.0989L3.23828 26.7239C11.4339 25.4475 33.3664 21.3758 33.3664 21.3758L33.4246 20.8973L20.1181 20.4417C21.5867 18.8896 22.5922 16.2547 22.3444 14.545V14.545Z"
+                                        fill="#CF4037" />
+                                </svg>
+                                <span>Turkish Airlines</span>
+                            </div>
+                            <div class="flightDetails">
+                                <div class="departure">
+                                    <span>11:35 PM</span>
+                                    <span>SIN</span>
+                                </div>
+                                <div class="flightDuration">
+                                    <svg width="108" height="16" viewBox="0 0 108 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.52029 8.03241L101.528 8.17033" stroke="#CACACA" stroke-width="0.836813"
+                                            stroke-linecap="square" stroke-dasharray="1.67 4.18" />
+                                        <path
+                                            d="M50.366 15.6044H52.0188L56.1508 9.24466L60.696 9.24466C61.3819 9.24466 61.9355 8.71204 61.9355 8.0522C61.9355 7.39237 61.3819 6.85975 60.696 6.85975L56.1508 6.85975L52.0188 0.5L50.366 0.5L52.432 6.85978L47.8869 6.85978L46.6473 5.26983H45.4077L46.2341 8.05224L45.4077 10.8346H46.6473L47.8869 9.24466H52.432L50.366 15.6044Z"
+                                            fill="#1262AE" />
+                                        <circle cx="4.6167" cy="8" r="3.66319" fill="white" stroke="#1262AE"
+                                            stroke-width="1.67363" />
+                                        <path
+                                            d="M106.389 8.68406C106.389 10.5024 104.848 12.0313 102.877 12.0313C100.906 12.0313 99.3642 10.5024 99.3642 8.68406C99.3642 6.8657 100.906 5.33681 102.877 5.33681C104.848 5.33681 106.389 6.8657 106.389 8.68406Z"
+                                            fill="white" stroke="#1262AE" stroke-width="1.67363" />
+                                    </svg>
+                                    <span>33H 10M, 1-stop</span>
+                                </div>
+                                <div class="arrival">
+                                    <span>4:45 PM</span>
+                                    <span>LAX</span>
+                                </div>
+                            </div>
+                            <div class="pricing">
+                                S$ 723
+                            </div>
+                        </div>
+                        <button class="showMore">
+                            Show More Results
+                        </button>
+                    </div>
+                </div>
+                <div class="recentlyBooked">
+                    <div class="title">RECENTLY SEARCHED</div>
+                    <div class="recentCards">
+                        <div class="recentCard">
+                            <div class="airlinePrice">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.384 2.0842C8.7755 2.0842 1.73053 9.2875 1.73053 18.2577C1.73053 27.2272 8.77613 34.4299 17.384 34.4299C25.9911 34.4299 33.036 27.2273 33.036 18.2577C33.036 9.28747 25.9903 2.0842 17.384 2.0842ZM0.176758 18.2577C0.176758 8.52447 7.8415 0.564697 17.384 0.564697C26.9244 0.564697 34.5898 8.5245 34.5898 18.2577C34.5898 27.9903 26.9251 35.9494 17.384 35.9494C7.84229 35.9494 0.176758 27.9904 0.176758 18.2577Z"
+                                        fill="#CF4037" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.3444 14.545C21.5874 9.29753 17.164 6.70646 14.4009 5.15432C11.8366 3.71468 9.5407 3.06049 9.48531 3.22924C12.4018 5.57447 14.2745 9.22808 14.2745 13.3331C14.2745 20.0646 9.23534 25.5836 2.8335 26.0989L3.23828 26.7239C11.4339 25.4475 33.3664 21.3758 33.3664 21.3758L33.4246 20.8973L20.1181 20.4417C21.5867 18.8896 22.5922 16.2547 22.3444 14.545V14.545Z"
+                                        fill="#CF4037" />
+                                </svg>
+                                <span>Turkish Airlines</span>
+                                <span>$1128</span>
+                            </div>
+                            <div class="locations">
+                                <div class="departure">
+                                    <span>SIN</span>
+                                    <span>Singapore</span>
+                                </div>
+                                <div class="flightDuration">
+                                    <svg width="50" height="20" viewBox="0 0 108 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.52029 8.03241L101.528 8.17033" stroke="#CACACA"
+                                            stroke-width="0.836813" stroke-linecap="square"
+                                            stroke-dasharray="1.67 4.18" />
+                                        <path
+                                            d="M50.366 15.6044H52.0188L56.1508 9.24466L60.696 9.24466C61.3819 9.24466 61.9355 8.71204 61.9355 8.0522C61.9355 7.39237 61.3819 6.85975 60.696 6.85975L56.1508 6.85975L52.0188 0.5L50.366 0.5L52.432 6.85978L47.8869 6.85978L46.6473 5.26983H45.4077L46.2341 8.05224L45.4077 10.8346H46.6473L47.8869 9.24466H52.432L50.366 15.6044Z"
+                                            fill="#1262AE" />
+                                        <!-- <circle cx="4.6167" cy="8" r="3.66319" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
+                                        <!-- <path d="M106.389 8.68406C106.389 10.5024 104.848 12.0313 102.877 12.0313C100.906 12.0313 99.3642 10.5024 99.3642 8.68406C99.3642 6.8657 100.906 5.33681 102.877 5.33681C104.848 5.33681 106.389 6.8657 106.389 8.68406Z" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
+                                    </svg>
+                                </div>
+                                <div class="arrival">
+                                    <span>LAX</span>
+                                    <span>Los Angeles</span>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="class">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.6668 5.99996V3.99996C12.6668 3.64634 12.5264 3.3072 12.2763 3.05715C12.0263 2.8071 11.6871 2.66663 11.3335 2.66663H4.66683C4.31321 2.66663 3.97407 2.8071 3.72402 3.05715C3.47397 3.3072 3.3335 3.64634 3.3335 3.99996V5.99996"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M2 7.33333V10.6667C2 11.0203 2.14048 11.3594 2.39052 11.6095C2.64057 11.8595 2.97971 12 3.33333 12H12.6667C13.0203 12 13.3594 11.8595 13.6095 11.6095C13.8595 11.3594 14 11.0203 14 10.6667V7.33333C14 6.97971 13.8595 6.64057 13.6095 6.39052C13.3594 6.14048 13.0203 6 12.6667 6C12.313 6 11.9739 6.14048 11.7239 6.39052C11.4738 6.64057 11.3333 6.97971 11.3333 7.33333V8.66667H4.66667V7.33333C4.66667 6.97971 4.52619 6.64057 4.27614 6.39052C4.02609 6.14048 3.68696 6 3.33333 6C2.97971 6 2.64057 6.14048 2.39052 6.39052C2.14048 6.64057 2 6.97971 2 7.33333V7.33333Z"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M3.3335 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.6665 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>Economy</span>
+                                </div>
+                                <div class="class">
+                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.0664 12.7429V11.4762C11.0664 10.8043 10.7995 10.16 10.3244 9.68487C9.84935 9.20978 9.20499 8.94287 8.53311 8.94287H3.46644C2.79456 8.94287 2.15019 9.20978 1.6751 9.68487C1.20001 10.16 0.933105 10.8043 0.933105 11.4762V12.7429"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M5.99964 6.40956C7.39876 6.40956 8.53298 5.27535 8.53298 3.87623C8.53298 2.47711 7.39876 1.3429 5.99964 1.3429C4.60052 1.3429 3.46631 2.47711 3.46631 3.87623C3.46631 5.27535 4.60052 6.40956 5.99964 6.40956Z"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M14.8664 12.7428V11.4762C14.866 10.9149 14.6792 10.3696 14.3353 9.92597C13.9914 9.48235 13.5099 9.1655 12.9664 9.02517M10.4331 1.42517C10.978 1.56469 11.461 1.88161 11.8059 2.32597C12.1509 2.77032 12.3381 3.31683 12.3381 3.87934C12.3381 4.44185 12.1509 4.98835 11.8059 5.43271C11.461 5.87706 10.978 6.19398 10.4331 6.3335"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    <span>2 people</span>
+                                </div>
+                            </div>
+                            <div class="provider">
+                                <span>booked on</span>
+                                <span>Kaynak</span>
+                                <span>1s ago!</span>
+                            </div>
+                        </div>
+                        <div class="recentCard">
+                            <div class="airlinePrice">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.384 2.0842C8.7755 2.0842 1.73053 9.2875 1.73053 18.2577C1.73053 27.2272 8.77613 34.4299 17.384 34.4299C25.9911 34.4299 33.036 27.2273 33.036 18.2577C33.036 9.28747 25.9903 2.0842 17.384 2.0842ZM0.176758 18.2577C0.176758 8.52447 7.8415 0.564697 17.384 0.564697C26.9244 0.564697 34.5898 8.5245 34.5898 18.2577C34.5898 27.9903 26.9251 35.9494 17.384 35.9494C7.84229 35.9494 0.176758 27.9904 0.176758 18.2577Z"
+                                        fill="#CF4037" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.3444 14.545C21.5874 9.29753 17.164 6.70646 14.4009 5.15432C11.8366 3.71468 9.5407 3.06049 9.48531 3.22924C12.4018 5.57447 14.2745 9.22808 14.2745 13.3331C14.2745 20.0646 9.23534 25.5836 2.8335 26.0989L3.23828 26.7239C11.4339 25.4475 33.3664 21.3758 33.3664 21.3758L33.4246 20.8973L20.1181 20.4417C21.5867 18.8896 22.5922 16.2547 22.3444 14.545V14.545Z"
+                                        fill="#CF4037" />
+                                </svg>
+                                <span>Turkish Airlines</span>
+                                <span>$1128</span>
+                            </div>
+                            <div class="locations">
+                                <div class="departure">
+                                    <span>SIN</span>
+                                    <span>Singapore</span>
+                                </div>
+                                <div class="flightDuration">
+                                    <svg width="50" height="20" viewBox="0 0 108 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.52029 8.03241L101.528 8.17033" stroke="#CACACA"
+                                            stroke-width="0.836813" stroke-linecap="square"
+                                            stroke-dasharray="1.67 4.18" />
+                                        <path
+                                            d="M50.366 15.6044H52.0188L56.1508 9.24466L60.696 9.24466C61.3819 9.24466 61.9355 8.71204 61.9355 8.0522C61.9355 7.39237 61.3819 6.85975 60.696 6.85975L56.1508 6.85975L52.0188 0.5L50.366 0.5L52.432 6.85978L47.8869 6.85978L46.6473 5.26983H45.4077L46.2341 8.05224L45.4077 10.8346H46.6473L47.8869 9.24466H52.432L50.366 15.6044Z"
+                                            fill="#1262AE" />
+                                        <!-- <circle cx="4.6167" cy="8" r="3.66319" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
+                                        <!-- <path d="M106.389 8.68406C106.389 10.5024 104.848 12.0313 102.877 12.0313C100.906 12.0313 99.3642 10.5024 99.3642 8.68406C99.3642 6.8657 100.906 5.33681 102.877 5.33681C104.848 5.33681 106.389 6.8657 106.389 8.68406Z" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
+                                    </svg>
+                                </div>
+                                <div class="arrival">
+                                    <span>LAX</span>
+                                    <span>Los Angeles</span>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="class">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.6668 5.99996V3.99996C12.6668 3.64634 12.5264 3.3072 12.2763 3.05715C12.0263 2.8071 11.6871 2.66663 11.3335 2.66663H4.66683C4.31321 2.66663 3.97407 2.8071 3.72402 3.05715C3.47397 3.3072 3.3335 3.64634 3.3335 3.99996V5.99996"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M2 7.33333V10.6667C2 11.0203 2.14048 11.3594 2.39052 11.6095C2.64057 11.8595 2.97971 12 3.33333 12H12.6667C13.0203 12 13.3594 11.8595 13.6095 11.6095C13.8595 11.3594 14 11.0203 14 10.6667V7.33333C14 6.97971 13.8595 6.64057 13.6095 6.39052C13.3594 6.14048 13.0203 6 12.6667 6C12.313 6 11.9739 6.14048 11.7239 6.39052C11.4738 6.64057 11.3333 6.97971 11.3333 7.33333V8.66667H4.66667V7.33333C4.66667 6.97971 4.52619 6.64057 4.27614 6.39052C4.02609 6.14048 3.68696 6 3.33333 6C2.97971 6 2.64057 6.14048 2.39052 6.39052C2.14048 6.64057 2 6.97971 2 7.33333V7.33333Z"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M3.3335 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.6665 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>Economy</span>
+                                </div>
+                                <div class="class">
+                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.0664 12.7429V11.4762C11.0664 10.8043 10.7995 10.16 10.3244 9.68487C9.84935 9.20978 9.20499 8.94287 8.53311 8.94287H3.46644C2.79456 8.94287 2.15019 9.20978 1.6751 9.68487C1.20001 10.16 0.933105 10.8043 0.933105 11.4762V12.7429"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M5.99964 6.40956C7.39876 6.40956 8.53298 5.27535 8.53298 3.87623C8.53298 2.47711 7.39876 1.3429 5.99964 1.3429C4.60052 1.3429 3.46631 2.47711 3.46631 3.87623C3.46631 5.27535 4.60052 6.40956 5.99964 6.40956Z"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M14.8664 12.7428V11.4762C14.866 10.9149 14.6792 10.3696 14.3353 9.92597C13.9914 9.48235 13.5099 9.1655 12.9664 9.02517M10.4331 1.42517C10.978 1.56469 11.461 1.88161 11.8059 2.32597C12.1509 2.77032 12.3381 3.31683 12.3381 3.87934C12.3381 4.44185 12.1509 4.98835 11.8059 5.43271C11.461 5.87706 10.978 6.19398 10.4331 6.3335"
+                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    <span>2 people</span>
+                                </div>
+                            </div>
+                            <div class="provider">
+                                <span>booked on</span>
+                                <span>Kaynak</span>
+                                <span>1s ago!</span>
+                            </div>
+                        </div>
+                        <button class="showMore">
+                            Show More
+                            <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.4502 0.525098L3.5002 3.4751L0.550195 0.525097" stroke="#1262AF"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="bio">
+            <div class="logo">Crayon_21</div>
+            <span>Fickle Flight is your one-stop travel portal. We offer hassle free flight and hotel bookings. We also
+                have all your flight needs in you online shop.</span>
+            <div class="socialMedia">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.5001 15.3871C19.5001 16.5805 19.026 17.7251 18.1821 18.569C17.3382 19.413 16.1936 19.8871 15.0001 19.8871C13.8066 19.8871 12.662 19.413 11.8181 18.569C10.9742 17.7251 10.5001 16.5805 10.5001 15.3871C10.5001 15.1306 10.5271 14.8801 10.5736 14.6371H9.0001V20.6326C9.0001 21.0496 9.3376 21.3871 9.7546 21.3871H20.2471C20.4469 21.3867 20.6385 21.307 20.7796 21.1655C20.9208 21.0241 21.0001 20.8324 21.0001 20.6326V14.6371H19.4266C19.4731 14.8801 19.5001 15.1306 19.5001 15.3871ZM15.0001 18.3871C15.3942 18.387 15.7844 18.3092 16.1484 18.1584C16.5124 18.0075 16.8432 17.7863 17.1217 17.5076C17.4003 17.2289 17.6213 16.8981 17.772 16.534C17.9227 16.1698 18.0002 15.7796 18.0001 15.3856C18 14.9915 17.9223 14.6013 17.7714 14.2373C17.6205 13.8733 17.3994 13.5425 17.1207 13.2639C16.842 12.9854 16.5111 12.7644 16.147 12.6137C15.7829 12.463 15.3927 12.3855 14.9986 12.3856C14.2028 12.3858 13.4396 12.7021 12.877 13.265C12.3144 13.8279 11.9984 14.5912 11.9986 15.3871C11.9988 16.1829 12.3151 16.9461 12.878 17.5087C13.4409 18.0713 14.2043 18.3873 15.0001 18.3871ZM18.6001 12.2371H20.3986C20.5181 12.2371 20.6327 12.1897 20.7173 12.1053C20.802 12.021 20.8497 11.9065 20.8501 11.7871V9.98856C20.8501 9.86882 20.8025 9.75397 20.7179 9.6693C20.6332 9.58463 20.5183 9.53706 20.3986 9.53706H18.6001C18.4804 9.53706 18.3655 9.58463 18.2808 9.6693C18.1962 9.75397 18.1486 9.86882 18.1486 9.98856V11.7871C18.1501 12.0346 18.3526 12.2371 18.6001 12.2371ZM15.0001 0.987061C11.181 0.987061 7.51828 2.5042 4.81776 5.20472C2.11724 7.90525 0.600098 11.5679 0.600098 15.3871C0.600098 19.2062 2.11724 22.8689 4.81776 25.5694C7.51828 28.2699 11.181 29.7871 15.0001 29.7871C16.8911 29.7871 18.7637 29.4146 20.5107 28.6909C22.2578 27.9673 23.8453 26.9066 25.1824 25.5694C26.5196 24.2322 27.5803 22.6448 28.304 20.8977C29.0276 19.1506 29.4001 17.2781 29.4001 15.3871C29.4001 13.496 29.0276 11.6235 28.304 9.87642C27.5803 8.12933 26.5196 6.54189 25.1824 5.20472C23.8453 3.86756 22.2578 2.80686 20.5107 2.0832C18.7637 1.35953 16.8911 0.987061 15.0001 0.987061ZM22.5001 21.2206C22.5001 22.1371 21.7501 22.8871 20.8336 22.8871H9.1666C8.2501 22.8871 7.5001 22.1371 7.5001 21.2206V9.55356C7.5001 8.63706 8.2501 7.88706 9.1666 7.88706H20.8336C21.7501 7.88706 22.5001 8.63706 22.5001 9.55356V21.2206Z"
+                        fill="white" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.0001 0.987061C7.0471 0.987061 0.600098 7.43406 0.600098 15.3871C0.600098 23.3401 7.0471 29.7871 15.0001 29.7871C22.9531 29.7871 29.4001 23.3401 29.4001 15.3871C29.4001 7.43406 22.9531 0.987061 15.0001 0.987061ZM20.8576 12.7831C20.8636 12.9061 20.8651 13.0291 20.8651 13.1491C20.8651 16.8991 18.0136 21.2206 12.7966 21.2206C11.255 21.2231 9.74555 20.7804 8.4496 19.9456C8.6701 19.9726 8.8966 19.9831 9.1261 19.9831C10.4551 19.9831 11.6776 19.5316 12.6481 18.7696C12.0567 18.7579 11.4836 18.5621 11.0088 18.2093C10.5339 17.8566 10.181 17.3644 9.9991 16.8016C10.4238 16.8823 10.8614 16.8654 11.2786 16.7521C10.6367 16.6223 10.0594 16.2744 9.64466 15.7676C9.22993 15.2607 9.00326 14.626 9.0031 13.9711V13.9366C9.3856 14.1481 9.8236 14.2771 10.2886 14.2921C9.6868 13.8915 9.26078 13.2761 9.09767 12.5718C8.93456 11.8675 9.04668 11.1274 9.4111 10.5031C10.1235 11.3791 11.012 12.0957 12.019 12.6065C13.0259 13.1174 14.1289 13.4111 15.2566 13.4686C15.1132 12.86 15.1749 12.2212 15.4321 11.6513C15.6893 11.0815 16.1275 10.6125 16.6787 10.3175C17.2299 10.0224 17.8631 9.91765 18.4799 10.0196C19.0968 10.1215 19.6627 10.4243 20.0896 10.8811C20.7244 10.7555 21.3331 10.5226 21.8896 10.1926C21.678 10.8498 21.2351 11.4078 20.6431 11.7631C21.2054 11.6953 21.7544 11.5442 22.2721 11.3146C21.8918 11.8844 21.4128 12.3817 20.8576 12.7831Z"
+                        fill="white" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.0001 0.987061C7.0471 0.987061 0.600098 7.43406 0.600098 15.3871C0.600098 23.3401 7.0471 29.7871 15.0001 29.7871C22.9531 29.7871 29.4001 23.3401 29.4001 15.3871C29.4001 7.43406 22.9531 0.987061 15.0001 0.987061ZM18.4111 10.9381H16.2466C15.9901 10.9381 15.7051 11.2756 15.7051 11.7241V13.2871H18.4126L18.0031 15.5161H15.7051V22.2076H13.1506V15.5161H10.8331V13.2871H13.1506V11.9761C13.1506 10.0951 14.4556 8.56656 16.2466 8.56656H18.4111V10.9381Z"
+                        fill="white" />
+                </svg>
+            </div>
+        </div>
+        <hr>
+        <div class="footerMenu">
+            <span class="heading">Company</span>
+            <span class="heading">Support</span>
+            <span class="heading">More</span>
+            <span>About Us</span>
+            <span>Account</span>
+            <span>Covid Advisory</span>
+            <span>News</span>
+            <span>Support Centres</span>
+            <span>Airline Fees</span>
+            <span>Career</span>
+            <span>FAQ</span>
+            <span>Tips</span>
+            <span>How We work</span>
+            <span>Accessibilty</span>
+            <span>Quarantine Rules</span>
+        </div>
+    </footer>
+    <% if(query){%>
+        <div class="filterQuery" style="display:none;" data-query="<%=JSON.stringify(query)%>"></div>
+        <%} %>
+            <script src="/scripts/headerAuth.js"></script>
+            <script src="/scripts/movieResults.js" type="module"></script>
+</body>
+
+</html>

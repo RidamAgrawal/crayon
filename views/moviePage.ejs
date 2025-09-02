@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE| Crayon_21Movies</title>
+    <link rel="stylesheet" href="/stylesheets/movieHome.css">
+    <link rel="stylesheet" href="/stylesheets/moviePage.css">
+</head>
+
+<body>
+    <div class="modal">
+        <div class="modalContent">
+            <div>
+                <div class="modalContentSection loginSection">
+                    <div class="formHeader">
+                        <span>USER LOGIN</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="signin">
+                        <div class="login">
+                            <input id="loginEmail" type="email" for="loginEmail" placeholder="">
+                            <label for="loginEmail">Email address</label>
+                        </div>
+                        <div class="login">
+                            <input id="loginPassword" type="password" for="loginPassword" placeholder="">
+                            <label for="loginPassword">Password</label>
+                        </div>
+                        <button type="button" onclick="login(this)">LOGIN</button>
+                    </form>
+                </div>
+                <div class="modalContentSection signupSection">
+                    <div class="formHeader">
+                        <span>USER SIGNUP</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="register">
+                        <span>Please fill in to become a member of this Family!</span>
+                        <div class="signup">
+                            <input id="signupName" type="text" for="signupName" placeholder="">
+                            <label for="signupName">Your name</label>
+                        </div>
+                        <div class="signup">
+                            <input id="signupEmail" type="email" for="signupEmail" placeholder="">
+                            <label for="signupEmail">Email address</label>
+                        </div>
+                        <div class="signup">
+                            <input id="signupPassword" type="password" for="signupPassword" placeholder="">
+                            <label for="signupPassword">Password</label>
+                        </div>
+                        <div class="signup">
+                            <input id="signupAvatar" type="text" for="signupAvatar" data-value="1">
+                            <label for="signupAvatar">Avatar</label>
+                            <div class="avatars">
+                                <div class="avatarIcon selected" data-avatar="1"><img data-avatar="1"
+                                        src="/images/1.jpg" alt="avatar1"></div>
+                                <div class="avatarIcon" data-avatar="2"><img data-avatar="2" src="/images/2.jpg"
+                                        alt="avatar2"></div>
+                                <div class="avatarIcon" data-avatar="3"><img data-avatar="3" src="/images/3.jpg"
+                                        alt="avatar3"></div>
+                                <div class="avatarIcon" data-avatar="4"><img data-avatar="4" src="/images/4.jpg"
+                                        alt="avatar4"></div>
+                                <div class="avatarIcon" data-avatar="5"><img data-avatar="5" src="/images/5.jpg"
+                                        alt="avatar5"></div>
+                                <div class="avatarIcon" data-avatar="6"><img data-avatar="6" src="/images/6.jpg"
+                                        alt="avatar6"></div>
+                                <div class="avatarIcon" data-avatar="7"><img data-avatar="7" src="/images/7.jpg"
+                                        alt="avatar7"></div>
+                                <div class="avatarIcon" data-avatar="8"><img data-avatar="8" src="/images/8.jpg"
+                                        alt="avatar8"></div>
+                                <div class="avatarIcon" data-avatar="9"><img data-avatar="9" src="/images/9.jpg"
+                                        alt="avatar9"></div>
+                                <div class="avatarIcon" data-avatar="10"><img data-avatar="10" src="/images/10.jpg"
+                                        alt="avatar10"></div>
+                                <div class="avatarIcon" data-avatar="11"><img data-avatar="11" src="/images/11.jpg"
+                                        alt="avatar11"></div>
+                                <div class="avatarIcon" data-avatar="12"><img data-avatar="12" src="/images/12.jpg"
+                                        alt="avatar12"></div>
+                                <div class="avatarIcon" data-avatar="13"><img data-avatar="13" src="/images/13.jpg"
+                                        alt="avatar13"></div>
+                                <div class="avatarIcon" data-avatar="14"><img data-avatar="14" src="/images/14.jpg"
+                                        alt="avatar14"></div>
+                                <div class="avatarIcon" data-avatar="15"><img data-avatar="15" src="/images/15.jpg"
+                                        alt="avatar15"></div>
+                                <div class="avatarIcon" data-avatar="16"><img data-avatar="16" src="/images/16.jpg"
+                                        alt="avatar16"></div>
+                                <div class="avatarIcon" data-avatar="17"><img data-avatar="17" src="/images/17.jpg"
+                                        alt="avatar17"></div>
+                                <div class="avatarIcon" data-avatar="18"><img data-avatar="18" src="/images/18.jpg"
+                                        alt="avatar18"></div>
+                                <div class="avatarIcon" data-avatar="19"><img data-avatar="19" src="/images/19.jpg"
+                                        alt="avatar19"></div>
+                                <div class="avatarIcon" data-avatar="20"><img data-avatar="20" src="/images/20.jpg"
+                                        alt="avatar20"></div>
+                                <div class="avatarIcon" data-avatar="21"><img data-avatar="21" src="/images/21.jpg"
+                                        alt="avatar21"></div>
+                                <div class="avatarIcon" data-avatar="22"><img data-avatar="22" src="/images/22.jpg"
+                                        alt="avatar22"></div>
+                                <div class="avatarIcon" data-avatar="23"><img data-avatar="23" src="/images/23.jpg"
+                                        alt="avatar23"></div>
+                                <div class="avatarIcon" data-avatar="24"><img data-avatar="24" src="/images/24.jpg"
+                                        alt="avatar24"></div>
+                                <div class="avatarIcon" data-avatar="25"><img data-avatar="25" src="/images/25.jpg"
+                                        alt="avatar25"></div>
+                                <div class="avatarIcon" data-avatar="26"><img data-avatar="26" src="/images/26.jpg"
+                                        alt="avatar26"></div>
+                                <div class="avatarIcon" data-avatar="27"><img data-avatar="27" src="/images/27.jpg"
+                                        alt="avatar27"></div>
+                                <div class="avatarIcon" data-avatar="28"><img data-avatar="28" src="/images/28.jpg"
+                                        alt="avatar28"></div>
+                                <div class="avatarIcon" data-avatar="29"><img data-avatar="29" src="/images/29.jpg"
+                                        alt="avatar29"></div>
+                                <div class="avatarIcon" data-avatar="30"><img data-avatar="30" src="/images/30.jpg"
+                                        alt="avatar30"></div>
+                                <div class="avatarIcon" data-avatar="31"><img data-avatar="31" src="/images/31.jpg"
+                                        alt="avatar31"></div>
+                                <div class="avatarIcon" data-avatar="32"><img data-avatar="32" src="/images/32.jpg"
+                                        alt="avatar32"></div>
+                                <div class="avatarIcon" data-avatar="33"><img data-avatar="33" src="/images/33.jpg"
+                                        alt="avatar33"></div>
+                                <div class="avatarIcon" data-avatar="34"><img data-avatar="34" src="/images/34.jpg"
+                                        alt="avatar34"></div>
+                                <div class="avatarIcon" data-avatar="35"><img data-avatar="35" src="/images/35.jpg"
+                                        alt="avatar35"></div>
+                                <div class="avatarIcon" data-avatar="36"><img data-avatar="36" src="/images/36.jpg"
+                                        alt="avatar36"></div>
+                            </div>
+                        </div>
+                        <button type="button" onclick="signup(this)">SIGNUP</button>
+                    </form>
+                </div>
+                <div class="modalContentSection logoutSection">
+                    <div class="formHeader">
+                        <span>LOGOUT</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="logout">
+                        <span>Do You Really Want to Logout?</span>
+                        <button type="button" onclick="logout()">LOGOUT</button>
+                    </form>
+                </div>
+                <div class="modalContentSection updateProfile">
+                    <div class="formHeader">
+                        <span>UPDATE PROFILE</span>
+                    </div>
+                    <div class="formHeader"></div>
+                    <form class="update">
+                        <span>Please Click Edit Icon to Change fields</span>
+                        <div class="update">
+                            <input id="updateName" type="text" for="updateName" placeholder="">
+                            <label for="updateName">Your name</label>
+                        </div>
+                        <div class="update">
+                            <input id="updateAvatar" type="text" for="updateAvatar">
+                            <label for="updateAvatar">Avatar</label>
+                            <div class="avatars">
+                                <div class="avatarIcon" data-avatar="1"><img data-avatar="1" src="/images/1.jpg"
+                                        alt="avatar1"></div>
+                                <div class="avatarIcon" data-avatar="2"><img data-avatar="2" src="/images/2.jpg"
+                                        alt="avatar2"></div>
+                                <div class="avatarIcon" data-avatar="3"><img data-avatar="3" src="/images/3.jpg"
+                                        alt="avatar3"></div>
+                                <div class="avatarIcon" data-avatar="4"><img data-avatar="4" src="/images/4.jpg"
+                                        alt="avatar4"></div>
+                                <div class="avatarIcon" data-avatar="5"><img data-avatar="5" src="/images/5.jpg"
+                                        alt="avatar5"></div>
+                                <div class="avatarIcon" data-avatar="6"><img data-avatar="6" src="/images/6.jpg"
+                                        alt="avatar6"></div>
+                                <div class="avatarIcon" data-avatar="7"><img data-avatar="7" src="/images/7.jpg"
+                                        alt="avatar7"></div>
+                                <div class="avatarIcon" data-avatar="8"><img data-avatar="8" src="/images/8.jpg"
+                                        alt="avatar8"></div>
+                                <div class="avatarIcon" data-avatar="9"><img data-avatar="9" src="/images/9.jpg"
+                                        alt="avatar9"></div>
+                                <div class="avatarIcon" data-avatar="10"><img data-avatar="10" src="/images/10.jpg"
+                                        alt="avatar10"></div>
+                                <div class="avatarIcon" data-avatar="11"><img data-avatar="11" src="/images/11.jpg"
+                                        alt="avatar11"></div>
+                                <div class="avatarIcon" data-avatar="12"><img data-avatar="12" src="/images/12.jpg"
+                                        alt="avatar12"></div>
+                                <div class="avatarIcon" data-avatar="13"><img data-avatar="13" src="/images/13.jpg"
+                                        alt="avatar13"></div>
+                                <div class="avatarIcon" data-avatar="14"><img data-avatar="14" src="/images/14.jpg"
+                                        alt="avatar14"></div>
+                                <div class="avatarIcon" data-avatar="15"><img data-avatar="15" src="/images/15.jpg"
+                                        alt="avatar15"></div>
+                                <div class="avatarIcon" data-avatar="16"><img data-avatar="16" src="/images/16.jpg"
+                                        alt="avatar16"></div>
+                                <div class="avatarIcon" data-avatar="17"><img data-avatar="17" src="/images/17.jpg"
+                                        alt="avatar17"></div>
+                                <div class="avatarIcon" data-avatar="18"><img data-avatar="18" src="/images/18.jpg"
+                                        alt="avatar18"></div>
+                                <div class="avatarIcon" data-avatar="19"><img data-avatar="19" src="/images/19.jpg"
+                                        alt="avatar19"></div>
+                                <div class="avatarIcon" data-avatar="20"><img data-avatar="20" src="/images/20.jpg"
+                                        alt="avatar20"></div>
+                                <div class="avatarIcon" data-avatar="21"><img data-avatar="21" src="/images/21.jpg"
+                                        alt="avatar21"></div>
+                                <div class="avatarIcon" data-avatar="22"><img data-avatar="22" src="/images/22.jpg"
+                                        alt="avatar22"></div>
+                                <div class="avatarIcon" data-avatar="23"><img data-avatar="23" src="/images/23.jpg"
+                                        alt="avatar23"></div>
+                                <div class="avatarIcon" data-avatar="24"><img data-avatar="24" src="/images/24.jpg"
+                                        alt="avatar24"></div>
+                                <div class="avatarIcon" data-avatar="25"><img data-avatar="25" src="/images/25.jpg"
+                                        alt="avatar25"></div>
+                                <div class="avatarIcon" data-avatar="26"><img data-avatar="26" src="/images/26.jpg"
+                                        alt="avatar26"></div>
+                                <div class="avatarIcon" data-avatar="27"><img data-avatar="27" src="/images/27.jpg"
+                                        alt="avatar27"></div>
+                                <div class="avatarIcon" data-avatar="28"><img data-avatar="28" src="/images/28.jpg"
+                                        alt="avatar28"></div>
+                                <div class="avatarIcon" data-avatar="29"><img data-avatar="29" src="/images/29.jpg"
+                                        alt="avatar29"></div>
+                                <div class="avatarIcon" data-avatar="30"><img data-avatar="30" src="/images/30.jpg"
+                                        alt="avatar30"></div>
+                                <div class="avatarIcon" data-avatar="31"><img data-avatar="31" src="/images/31.jpg"
+                                        alt="avatar31"></div>
+                                <div class="avatarIcon" data-avatar="32"><img data-avatar="32" src="/images/32.jpg"
+                                        alt="avatar32"></div>
+                                <div class="avatarIcon" data-avatar="33"><img data-avatar="33" src="/images/33.jpg"
+                                        alt="avatar33"></div>
+                                <div class="avatarIcon" data-avatar="34"><img data-avatar="34" src="/images/34.jpg"
+                                        alt="avatar34"></div>
+                                <div class="avatarIcon" data-avatar="35"><img data-avatar="35" src="/images/35.jpg"
+                                        alt="avatar35"></div>
+                                <div class="avatarIcon" data-avatar="36"><img data-avatar="36" src="/images/36.jpg"
+                                        alt="avatar36"></div>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <input id="updatePassword" type="password" for="updatePassword" placeholder="">
+                            <label for="updatePassword">Password</label>
+                        </div>
+                        <button type="button" onclick="changeProfile()">SUBMIT</button>
+                    </form>
+                </div>
+                <div class="modalContentSection showTrailer">
+                    <div class="formHeader">
+                        <span>TRAILER</span>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <div>Crayon_21</div>
+                <div id="ghost">
+                    <div id="red">
+                        <div id="pupil"></div>
+                        <div id="pupil1"></div>
+                        <div id="eye"></div>
+                        <div id="eye1"></div>
+                        <div id="top0"></div>
+                        <div id="top1"></div>
+                        <div id="top2"></div>
+                        <div id="top3"></div>
+                        <div id="top4"></div>
+                        <div id="st0"></div>
+                        <div id="st1"></div>
+                        <div id="st2"></div>
+                        <div id="st3"></div>
+                        <div id="st4"></div>
+                        <div id="st5"></div>
+                        <div id="an1"></div>
+                        <div id="an2"></div>
+                        <div id="an3"></div>
+                        <div id="an4"></div>
+                        <div id="an5"></div>
+                        <div id="an6"></div>
+                        <div id="an7"></div>
+                        <div id="an8"></div>
+                        <div id="an9"></div>
+                        <div id="an10"></div>
+                        <div id="an11"></div>
+                        <div id="an12"></div>
+                        <div id="an13"></div>
+                        <div id="an14"></div>
+                        <div id="an15"></div>
+                        <div id="an16"></div>
+                        <div id="an17"></div>
+                        <div id="an18"></div>
+                    </div>
+                    <div id="shadow"></div>
+                </div>
+            </div>
+            <div class="navRight">
+                <ul class="navMenu">
+                    <li><a href="/movieHome">Explore</a></li>
+                    <li><a href="/movieResults">Search</a></li>
+                    <li>Hotels</li>
+                    <li>Offers</li>
+                </ul>
+                <div class="accountsSection">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21.6732 19.0531C21.0303 18.48 20.4675 17.823 19.9999 17.0998C19.4894 16.1015 19.1834 15.0113 19.0999 13.8931V10.5998C19.1043 8.84351 18.4672 7.14609 17.3084 5.82642C16.1495 4.50675 14.5486 3.65568 12.8065 3.43311V2.57311C12.8065 2.33706 12.7128 2.11069 12.5459 1.94378C12.379 1.77687 12.1526 1.68311 11.9165 1.68311C11.6805 1.68311 11.4541 1.77687 11.2872 1.94378C11.1203 2.11069 11.0265 2.33706 11.0265 2.57311V3.44644C9.30004 3.68506 7.71852 4.54128 6.57489 5.85651C5.43126 7.17174 4.80302 8.85687 4.80654 10.5998V13.8931C4.72304 15.0113 4.41705 16.1015 3.90654 17.0998C3.44712 17.8213 2.89333 18.4783 2.25987 19.0531C2.18876 19.1156 2.13176 19.1925 2.09268 19.2787C2.0536 19.3649 2.03332 19.4585 2.0332 19.5531V20.4598C2.0332 20.6366 2.10344 20.8062 2.22847 20.9312C2.35349 21.0562 2.52306 21.1264 2.69987 21.1264H21.2332C21.41 21.1264 21.5796 21.0562 21.7046 20.9312C21.8296 20.8062 21.8999 20.6366 21.8999 20.4598V19.5531C21.8997 19.4585 21.8795 19.3649 21.8404 19.2787C21.8013 19.1925 21.7443 19.1156 21.6732 19.0531ZM3.41987 19.7931C4.04014 19.1939 4.58627 18.5224 5.04654 17.7931C5.68961 16.5874 6.06482 15.2571 6.14654 13.8931V10.5998C6.1201 9.81846 6.25115 9.03982 6.5319 8.31022C6.81265 7.58061 7.23734 6.91496 7.7807 6.35291C8.32406 5.79085 8.97496 5.34388 9.69466 5.03862C10.4143 4.73336 11.1881 4.57604 11.9699 4.57604C12.7516 4.57604 13.5254 4.73336 14.2451 5.03862C14.9648 5.34388 15.6157 5.79085 16.159 6.35291C16.7024 6.91496 17.1271 7.58061 17.4078 8.31022C17.6886 9.03982 17.8196 9.81846 17.7932 10.5998V13.8931C17.8749 15.2571 18.2501 16.5874 18.8932 17.7931C19.3535 18.5224 19.8996 19.1939 20.5199 19.7931H3.41987Z"
+                            fill="#424242" />
+                        <path
+                            d="M12 23.3135C12.42 23.3038 12.823 23.1459 13.1378 22.8677C13.4526 22.5896 13.6588 22.209 13.72 21.7935H10.2134C10.2764 22.2203 10.4923 22.6098 10.8209 22.8894C11.1496 23.169 11.5686 23.3197 12 23.3135Z"
+                            fill="#424242" />
+                        <circle cx="18.4565" cy="5.93701" r="3.5" fill="transparent" />
+                    </svg>
+                    <div class="profileImage">
+                        <img src="images/1.jpg" />
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                            fill="#424242">
+                            <path
+                                d="M234.97-258.15q56.95-40.16 116.53-62.62T480-343.23q68.92 0 128.7 22.46 59.79 22.46 116.74 62.62 41.51-47.36 62.91-102.79 21.39-55.44 21.39-119.06 0-138.69-95.52-234.22-95.53-95.52-234.22-95.52t-234.22 95.52Q150.26-618.69 150.26-480q0 63.62 21.6 119.06 21.6 55.43 63.11 102.79Zm244.89-196.72q-54.22 0-91.3-37.22-37.07-37.22-37.07-91.44 0-54.21 37.22-91.29 37.21-37.08 91.43-37.08 54.22 0 91.3 37.22 37.07 37.22 37.07 91.44 0 54.21-37.22 91.29-37.21 37.08-91.43 37.08Zm.45 354.87q-79.05 0-148.33-29.77-69.27-29.77-120.85-81.41-51.59-51.64-81.36-120.7Q100-400.94 100-480.05q0-79.1 29.77-148.12 29.77-69.01 81.41-120.65t120.7-81.41Q400.94-860 480.05-860q79.1 0 148.12 29.77 69.01 29.77 120.65 81.41t81.41 120.68Q860-559.11 860-480.31q0 79.05-29.77 148.33-29.77 69.27-81.41 120.85-51.64 51.59-120.68 81.36Q559.11-100 480.31-100Zm-.31-50.26q55.23 0 108.14-17.62 52.91-17.63 97.86-54.48-44.95-33.54-97.04-52.08T480-292.98q-56.87 0-109.15 18.35-52.29 18.35-96.59 52.27 44.69 36.85 97.6 54.48 52.91 17.62 108.14 17.62Zm.04-354.87q33.86 0 56.04-22.21 22.18-22.22 22.18-56.08t-22.22-56.04q-22.21-22.18-56.08-22.18-33.86 0-56.04 22.21-22.18 22.22-22.18 56.08t22.22 56.04q22.21 22.18 56.08 22.18Zm-.04-78.25Zm0 361.76Z" />
+                        </svg>
+                        <ul class="select">
+                            <div>
+                                <li onclick="openModal(1)">Signup</li>
+                                <li onclick="openModal(0)">Login</li>
+                                <li onclick="openModal(2)">Logout</li>
+                                <li onclick="openModal(3)">Update</li>
+                                <li>More...</li>
+                                <li class="indicator"></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="heroSection">
+        <div class="poster">
+            <img class="moviePoster" src="/images/subscribeBackground.png">
+        </div>
+        <div class="movieDetails">
+            <div class="title">Avatar:The Way of Water</div>
+            <div class="movieContent">
+                <div class="aboutMovie">
+                    <div class="genres">
+                        <!-- <span>Thrille</span>
+                        <span>Action</span>
+                        <span>Adventure</span>
+                        <span>Fanasy</span> -->
+                    </div>
+                    <div class="ratings">
+                        <div>
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title>IMDb</title>
+                                <path
+                                    d="M22.3781 0H1.6218C.7411.0583.0587.7437.0018 1.5953l-.001 20.783c.0585.8761.7125 1.543 1.5559 1.6191A.337.337 0 0 0 1.6016 24h20.7971a.4579.4579 0 0 0 .0437-.002c.8727-.0768 1.5568-.8271 1.5568-1.7085V1.7098c0-.8914-.696-1.6416-1.584-1.7078A.3294.3294 0 0 0 22.3781 0zm0 .496a1.2144 1.2144 0 0 1 1.1252 1.2139v20.5797c0 .6377-.4875 1.1602-1.1045 1.2145H1.6016c-.5967-.0543-1.0645-.5297-1.1053-1.1258V1.6284C.5371 1.0185 1.0184.5364 1.6217.496h20.7564zM4.7954 8.2603v7.3636H2.8899V8.2603h1.9055zm6.5367 0v7.3636H9.6707v-4.9704l-.6711 4.9704H7.813l-.6986-4.8618-.0066 4.8618h-1.668V8.2603h2.468c.0748.4476.1492.9694.2307 1.5734l.2712 1.8713.4407-3.4447h2.4817zm2.9772 1.3289c.0742.0404.122.108.1417.2034.0279.0953.0345.3118.0345.6442v2.8548c0 .4881-.0345.7867-.0955.8954-.0609.1152-.2304.1695-.5018.1695V9.5211c.204 0 .3457.0205.4211.0681zm-.0211 6.0347c.4543 0 .8006-.0265 1.0245-.0742.2304-.0477.4204-.1357.5694-.2648.1556-.1218.2642-.298.3251-.5219.0611-.2238.1021-.6648.1021-1.3224v-2.5832c0-.6986-.0271-1.1668-.0742-1.4039-.041-.237-.1431-.4543-.3126-.6437-.1695-.1973-.4198-.3324-.7456-.421-.3191-.0808-.8542-.1285-1.7694-.1285h-1.4244v7.3636h2.3051zm5.14-1.7827c0 .3523-.0199.5762-.0544.6708-.033.0947-.1894.1424-.3046.1424-.1086 0-.19-.0477-.2238-.1351-.041-.0887-.0609-.2986-.0609-.6238v-1.9469c0-.3324.0199-.5423.0543-.6237.0338-.0808.1086-.122.2171-.122.1153 0 .2709.0412.3114.1425.041.0947.0609.2986.0609.6032v1.8926zm-2.4747-5.5809v7.3636h1.7157l.1152-.4675c.1556.1894.3251.3324.5152.4271.1828.0881.4608.1357.678.1357.3047 0 .5629-.0748.7802-.237.2165-.1562.3589-.3462.4198-.5628.0543-.2173.0887-.543.0887-.9841v-2.0675c0-.4409-.0139-.7324-.0344-.8681-.0199-.1357-.0742-.2781-.1695-.4204-.1021-.1425-.2437-.251-.4272-.3325-.1834-.0742-.3999-.1152-.6576-.1152-.2172 0-.4952.0477-.6846.1285-.1835.0887-.353.2238-.5086.4007V8.2603h-1.8309z" />
+                            </svg>
+                            <span>7.6</span>
+                            <span>/ 10</span>
+                        </div>
+                        <div>
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title>Rotten Tomatoes</title>
+                                <path
+                                    d="M5.866 0L4.335 1.262l2.082 1.8c-2.629-.989-4.842 1.4-5.012 2.338 1.384-.323 2.24-.422 3.344-.335-7.042 4.634-4.978 13.148-1.434 16.094 5.784 4.612 13.77 3.202 17.91-1.316C27.26 13.363 22.993.65 10.86 2.766c.107-1.17.633-1.503 1.243-1.602-.89-1.493-3.67-.734-4.556 1.374C7.52 2.602 5.866 0 5.866 0zM4.422 7.217H6.9c2.673 0 2.898.012 3.55.202 1.06.307 1.868.973 2.313 1.904.05.106.092.206.13.305l7.623.008.027 2.912-2.745-.024v7.549l-2.982-.016v-7.522l-2.127.016a2.92 2.92 0 0 1-1.056 1.134c-.287.176-.3.19-.254.264.127.2 2.125 3.642 2.125 3.659l-3.39.019-2.013-3.376c-.034-.047-.122-.068-.344-.084l-.297-.02.037 3.48-3.075-.038zm3.016 2.288l.024.338c.014.186.024.729.024 1.206v.867l.582-.025c.32-.013.695-.049.833-.078.694-.146 1.048-.478 1.087-1.018.027-.378-.063-.636-.303-.87-.318-.309-.761-.416-1.733-.418Z" />
+                            </svg>
+                            <span>13(18+)</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path
+                                    d="M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120Zm160-360q66 0 113-47t47-113v-120H320v120q0 66 47 113t113 47ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z" />
+                            </svg>
+                            <span>3h 12m</span>
+                        </div>
+                    </div>
+                    <div class="plot">
+                        <p class="show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi necessitatibus
+                            optio impedit eveniet doloribus aperiam quas molestias aspernatur minima dolorum?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a nobis culpa dolor
+                            explicabo itaque, minima nulla quisquam ullam eligendi totam unde, eveniet aliquam, officia
+                            fuga? Excepturi harum architecto quis modi minima et beatae placeat iusto ut in sequi at id
+                            voluptatum sit facere, aspernatur similique possimus odit commodi quae!</p>
+                        <div onclick="showFullPlot()" class="show">
+                            <span>READ MORE</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#1262af">
+                                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                            </svg>
+                        </div>
+                        <div onclick="hidePlot()">
+                            <span>READ LESS</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#1262af">
+                                <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="showTrailer()">Watch Trailer</button>
+                        <button onclick="addToWishList()">To Watchlist</button>
+                    </div>
+                </div>
+                <div class="makers">
+                    <div class="directors">
+                        <div class="content">
+                            <span>Director</span>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="writers">
+                        <div class="content">
+                            <span>Writers</span>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="cast">
+                        <div class="content">
+                            <span>Stars</span>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="commentsSection">
+        <img src="/images/subscribeBackground.png">
+        <div class="commentsContainer">
+            <div class="textbox">
+                <textarea id="commentBox" placeholder="add comment..."></textarea>
+                <div class="commentBoxBottom">
+                    <div class="bottomMenu">
+                        <div class="textModifiers">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path
+                                    d="M272-200v-560h221q65 0 120 40t55 111q0 51-23 78.5T602-491q25 11 55.5 41t30.5 90q0 89-65 124.5T501-200H272Zm121-112h104q48 0 58.5-24.5T566-372q0-11-10.5-35.5T494-432H393v120Zm0-228h93q33 0 48-17t15-38q0-24-17-39t-44-15h-95v109Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path d="M200-200v-100h160l120-360H320v-100h400v100H580L460-300h140v100H200Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path
+                                    d="M200-120v-80h560v80H200Zm280-160q-101 0-157-63t-56-167v-330h103v336q0 56 28 91t82 35q54 0 82-35t28-91v-336h103v330q0 104-56 167t-157 63Z" />
+                            </svg>
+                        </div>
+                        <hr>
+                        <div class="additionals">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path
+                                    d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path
+                                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path
+                                    d="M480-480Zm0 400q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q43 0 83 8.5t77 24.5v90q-35-20-75.5-31.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-32-6.5-62T776-600h86q9 29 13.5 58.5T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm320-600v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80ZM620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm140 260q68 0 123.5-38.5T684-400H276q25 63 80.5 101.5T480-260Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#424242">
+                                <path
+                                    d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480v58q0 59-40.5 100.5T740-280q-35 0-66-15t-52-43q-29 29-65.5 43.5T480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480v58q0 26 17 44t43 18q26 0 43-18t17-44v-58q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v80H480Zm0-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <button data-action="send"><svg data-action="send" xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#424242">
+                            <path data-action="send"
+                                d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z" />
+                        </svg></button>
+                </div>
+                <div class="caution hide">comment cannot be empty</div>
+            </div>
+            <div class="commentsHeader">
+                <div class="commentsHeaderTitle">
+                    <h2>Comments</h2>
+                    <div class="commentCount">25</div>
+                </div>
+                <div class="commentsFilter">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#424242">
+                        <path
+                            d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z" />
+                    </svg>
+                    MostRecent
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#424242">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                    </svg>
+                </div>
+            </div>
+            <!-- <div class="comment">
+                    <div class="user">
+                        <div class="thumbicon"><img src="" alt=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#424242"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg></div>
+                        <div class="userName">Rohan</div>
+                        <div class="timeBefore">35 Minutes ago</div>
+                    </div>
+                    <div class="commentBody">
+                        Good Movie! I like it.
+                    </div>
+                    <div class="commentMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#424242"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg>
+                        <span class="likeCount">25</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#424242"><path d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"/></svg>
+                        <span class="dislikeCount">3</span>
+                        reply
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#424242"><path d="M760-200v-160q0-50-35-85t-85-35H273l144 144-57 56-240-240 240-240 57 56-144 144h367q83 0 141.5 58.5T840-360v160h-80Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#424242"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                    </div>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        <div class="bio">
+            <div class="logo">Crayon_21</div>
+            <span>Crayon_21 is a dummy website for testing and learning purpose you can book hotels,flights and other
+                tours.</span>
+            <div class="socialMedia">
+                <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.5001 15.3871C19.5001 16.5805 19.026 17.7251 18.1821 18.569C17.3382 19.413 16.1936 19.8871 15.0001 19.8871C13.8066 19.8871 12.662 19.413 11.8181 18.569C10.9742 17.7251 10.5001 16.5805 10.5001 15.3871C10.5001 15.1306 10.5271 14.8801 10.5736 14.6371H9.0001V20.6326C9.0001 21.0496 9.3376 21.3871 9.7546 21.3871H20.2471C20.4469 21.3867 20.6385 21.307 20.7796 21.1655C20.9208 21.0241 21.0001 20.8324 21.0001 20.6326V14.6371H19.4266C19.4731 14.8801 19.5001 15.1306 19.5001 15.3871ZM15.0001 18.3871C15.3942 18.387 15.7844 18.3092 16.1484 18.1584C16.5124 18.0075 16.8432 17.7863 17.1217 17.5076C17.4003 17.2289 17.6213 16.8981 17.772 16.534C17.9227 16.1698 18.0002 15.7796 18.0001 15.3856C18 14.9915 17.9223 14.6013 17.7714 14.2373C17.6205 13.8733 17.3994 13.5425 17.1207 13.2639C16.842 12.9854 16.5111 12.7644 16.147 12.6137C15.7829 12.463 15.3927 12.3855 14.9986 12.3856C14.2028 12.3858 13.4396 12.7021 12.877 13.265C12.3144 13.8279 11.9984 14.5912 11.9986 15.3871C11.9988 16.1829 12.3151 16.9461 12.878 17.5087C13.4409 18.0713 14.2043 18.3873 15.0001 18.3871ZM18.6001 12.2371H20.3986C20.5181 12.2371 20.6327 12.1897 20.7173 12.1053C20.802 12.021 20.8497 11.9065 20.8501 11.7871V9.98856C20.8501 9.86882 20.8025 9.75397 20.7179 9.6693C20.6332 9.58463 20.5183 9.53706 20.3986 9.53706H18.6001C18.4804 9.53706 18.3655 9.58463 18.2808 9.6693C18.1962 9.75397 18.1486 9.86882 18.1486 9.98856V11.7871C18.1501 12.0346 18.3526 12.2371 18.6001 12.2371ZM15.0001 0.987061C11.181 0.987061 7.51828 2.5042 4.81776 5.20472C2.11724 7.90525 0.600098 11.5679 0.600098 15.3871C0.600098 19.2062 2.11724 22.8689 4.81776 25.5694C7.51828 28.2699 11.181 29.7871 15.0001 29.7871C16.8911 29.7871 18.7637 29.4146 20.5107 28.6909C22.2578 27.9673 23.8453 26.9066 25.1824 25.5694C26.5196 24.2322 27.5803 22.6448 28.304 20.8977C29.0276 19.1506 29.4001 17.2781 29.4001 15.3871C29.4001 13.496 29.0276 11.6235 28.304 9.87642C27.5803 8.12933 26.5196 6.54189 25.1824 5.20472C23.8453 3.86756 22.2578 2.80686 20.5107 2.0832C18.7637 1.35953 16.8911 0.987061 15.0001 0.987061ZM22.5001 21.2206C22.5001 22.1371 21.7501 22.8871 20.8336 22.8871H9.1666C8.2501 22.8871 7.5001 22.1371 7.5001 21.2206V9.55356C7.5001 8.63706 8.2501 7.88706 9.1666 7.88706H20.8336C21.7501 7.88706 22.5001 8.63706 22.5001 9.55356V21.2206Z"
+                        fill="white" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.0001 0.987061C7.0471 0.987061 0.600098 7.43406 0.600098 15.3871C0.600098 23.3401 7.0471 29.7871 15.0001 29.7871C22.9531 29.7871 29.4001 23.3401 29.4001 15.3871C29.4001 7.43406 22.9531 0.987061 15.0001 0.987061ZM18.4111 10.9381H16.2466C15.9901 10.9381 15.7051 11.2756 15.7051 11.7241V13.2871H18.4126L18.0031 15.5161H15.7051V22.2076H13.1506V15.5161H10.8331V13.2871H13.1506V11.9761C13.1506 10.0951 14.4556 8.56656 16.2466 8.56656H18.4111V10.9381Z"
+                        fill="white" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.0001 0.987061C7.0471 0.987061 0.600098 7.43406 0.600098 15.3871C0.600098 23.3401 7.0471 29.7871 15.0001 29.7871C22.9531 29.7871 29.4001 23.3401 29.4001 15.3871C29.4001 7.43406 22.9531 0.987061 15.0001 0.987061ZM20.8576 12.7831C20.8636 12.9061 20.8651 13.0291 20.8651 13.1491C20.8651 16.8991 18.0136 21.2206 12.7966 21.2206C11.255 21.2231 9.74555 20.7804 8.4496 19.9456C8.6701 19.9726 8.8966 19.9831 9.1261 19.9831C10.4551 19.9831 11.6776 19.5316 12.6481 18.7696C12.0567 18.7579 11.4836 18.5621 11.0088 18.2093C10.5339 17.8566 10.181 17.3644 9.9991 16.8016C10.4238 16.8823 10.8614 16.8654 11.2786 16.7521C10.6367 16.6223 10.0594 16.2744 9.64466 15.7676C9.22993 15.2607 9.00326 14.626 9.0031 13.9711V13.9366C9.3856 14.1481 9.8236 14.2771 10.2886 14.2921C9.6868 13.8915 9.26078 13.2761 9.09767 12.5718C8.93456 11.8675 9.04668 11.1274 9.4111 10.5031C10.1235 11.3791 11.012 12.0957 12.019 12.6065C13.0259 13.1174 14.1289 13.4111 15.2566 13.4686C15.1132 12.86 15.1749 12.2212 15.4321 11.6513C15.6893 11.0815 16.1275 10.6125 16.6787 10.3175C17.2299 10.0224 17.8631 9.91765 18.4799 10.0196C19.0968 10.1215 19.6627 10.4243 20.0896 10.8811C20.7244 10.7555 21.3331 10.5226 21.8896 10.1926C21.678 10.8498 21.2351 11.4078 20.6431 11.7631C21.2054 11.6953 21.7544 11.5442 22.2721 11.3146C21.8918 11.8844 21.4128 12.3817 20.8576 12.7831Z"
+                        fill="white" />
+                </svg>
+            </div>
+        </div>
+        <hr>
+        <div class="footerMenu">
+            <span class="heading">Company</span>
+            <span class="heading">Support</span>
+            <span class="heading">More</span>
+            <span>About Us</span>
+            <span>Account</span>
+            <span>Covid Advisory</span>
+            <span>News</span>
+            <span>Centres</span>
+            <span>Airline Fees</span>
+            <span>Career</span>
+            <span>FAQ</span>
+            <span>Tips</span>
+            <span>How We work</span>
+            <span>Accessibilty</span>
+            <span>Quarantine Rules</span>
+        </div>
+    </footer>
+    <% if(movieId){%>
+        <div class="movieId" style="display:none;" data-movieId="<%=JSON.stringify(movieId)%>"></div>
+        <%} %>
+            <% if(process.env.YOUTUBE_API_KEY){%>
+                <div class="YOUTUBE_API" style="display:none;" data-api_key="<%=process.env.YOUTUBE_API_KEY%>"></div>
+                <%} %>
+                    <script src="/scripts/headerAuth.js"></script>
+                    <script src="/scripts/moviePage.js"></script>
+</body>
+
+</html>
