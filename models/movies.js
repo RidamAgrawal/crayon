@@ -24,6 +24,32 @@ const moviesSchema= new mongoose.Schema({
             ref:'comments',
         },
     ],
+    likes: [
+        {
+            user: {
+                type: mongoose.Schema.Types.ObjectId,
+                required: true,
+                ref: 'user',
+            },
+            createdAt: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ],
+    dislikes: [
+        {
+            user: {
+                type: mongoose.Schema.Types.ObjectId,
+                required: true,
+                ref: 'user',
+            },
+            createdAt: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ],
 });
 
 const movies=mongoose.model("movies",moviesSchema,"movies");

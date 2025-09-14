@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema({
             ref: 'comments',
         },
     ],
-    searches: [
+    visited: [
         {
             movie: {
                 type: mongoose.Schema.Types.ObjectId,
@@ -49,6 +49,32 @@ const userSchema = mongoose.Schema({
         }
     ],
     wishlist: [
+        {
+            movie: {
+                type: mongoose.Schema.Types.ObjectId,
+                required: true,
+                ref: 'movies',
+            },
+            createdAt: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ],
+    like: [
+        {
+            movie: {
+                type: mongoose.Schema.Types.ObjectId,
+                required: true,
+                ref: 'movies',
+            },
+            createdAt: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ],
+    dislike: [
         {
             movie: {
                 type: mongoose.Schema.Types.ObjectId,

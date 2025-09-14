@@ -46,24 +46,24 @@ getUserInfo();
 
 function openModal(i) {
     if (modal.classList.contains('show')) {
-        Array.from(modal.querySelector('.modalContent div').children).forEach(modalContentSection => modalContentSection.style.display = 'none');
-        modal.children[0].children[0].children[i].style.display = 'flex';
+        Array.from(modal.querySelector('.modalContent div').children).forEach(modalContentSection => modalContentSection.classList.remove('show'));
+        modal.querySelector('.modalContent div').children[i].classList.add('show');
         return;
     }
     document.body.classList.add('noScroll');
     modal.classList.add('show');
-    Array.from(modal.querySelector('.modalContent div').children).forEach(modalContentSection => modalContentSection.style.display = 'none');
+    Array.from(modal.querySelector('.modalContent div').children).forEach(modalContentSection => modalContentSection.classList.remove('show'));
     setTimeout(() => {
         modal.children[0].classList.add('show');
-        modal.children[0].children[0].children[i].style.display = 'flex';
+        modal.querySelector('.modalContent div')?.children[i]?.classList.add('show');
         if (i === 1) {
             const avatarContainer = signupSection.querySelector('.avatars');
             const signupAvatarInput = signupSection.querySelector('input#signupAvatar');
             let previouslySelectedAvatarNumber = signupAvatarInput.dataset.value;
             if (previouslySelectedAvatarNumber) {
-                avatarContainer.children[previouslySelectedAvatarNumber - 1].classList.remove('selected');
-                signupAvatarInput.dataset.value = avatar;
-                avatarContainer.children[avatar || 1 - 1].classList.add('selected');
+                avatarContainer.children[previouslySelectedAvatarNumber - 1]?.classList.remove('selected');
+                signupAvatarInput.dataset.value = +avatar || 1;
+                avatarContainer.children[avatar || 1 - 1]?.classList.add('selected');
             }
             avatarContainer.addEventListener('click', (event) => {
                 const element = event.target;
@@ -71,10 +71,10 @@ function openModal(i) {
                 if (clickedAvatarNumber) {
                     //remove previously selected icon
                     previouslySelectedAvatarNumber = signupAvatarInput.dataset.value;
-                    avatarContainer.children[+previouslySelectedAvatarNumber - 1].classList.remove('selected');
+                    avatarContainer.children[+previouslySelectedAvatarNumber - 1]?.classList.remove('selected');
                     //updating to input newly selected icon
                     signupAvatarInput.dataset.value = clickedAvatarNumber;
-                    avatarContainer.children[clickedAvatarNumber - 1].classList.add('selected');
+                    avatarContainer.children[clickedAvatarNumber - 1]?.classList.add('selected');
                 }
             })
         }
@@ -117,14 +117,8 @@ function closeModal() {
     modal.children[0].classList.remove('show');
     setTimeout(() => {
         modal.classList.remove('show');
-        Array.from(modal.children[0].children[0].children).forEach(i => {
-            i.style.display = 'none';
-            i.children[1].innerHTML = '';
-            Array.from(i.children[2].children)
-                .forEach(i2 => {
-                    if (i2.children.length >= 2) { i2.children[0].value = ''; }
-
-                })
+        Array.from(modal.querySelector('.modalContent div').children).forEach(i => {
+            i.classList.remove('show');
         });
     }, 500);
 }
@@ -136,37 +130,44 @@ modal.addEventListener('click', (e) => {
 });
 async function login() {
     try {
-        let email = document.querySelector('input#loginEmail').value;
-        let password = document.querySelector('input#loginPassword').value;
+        const emailInput = loginSection.querySelector('input#loginEmail');
+        const passwordInput = loginSection.querySelector('input#loginPassword');
+        const formNotifier = loginSection.querySelector('.notifier');
 
-        let res = formValidation({ email, password });
-        let formHeader = loginSection.children[0];
-        formHeader.innerHTML = '';
-        if (!res) {
-            await fetch(`${url.origin}/user/loginUser`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email, password })
-            })
-                .then(res => res.json())
-                .then(async data => {
+        const loader = formNotifier.children[0];
+        const errCtr = formNotifier.children[1];
+        const successCtr = formNotifier.children[2];
+
+        const cb = () =>{
+            Array.from(formNotifier.children).forEach(ele => ele.classList.remove('show'));
+        }
+
+        loader.classList.add('show');
+        await fetch(`${url.origin}/user/loginUser`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email:emailInput.value, password:passwordInput.value })
+        })
+            .then(res => res.json())
+            .then(async data => {
+                loader.classList.remove('show');
+                if(data.error){
+                    errCtr.innerText = data.error;
+                    errCtr.classList.add('show');
+                    passwordInput.value = '';
+                }
+                else{
+                    successCtr.classList.add('show');
+                    emailInput.value = "";
+                    passwordInput.value = "";
+                    
                     await getUserInfo();
                     closeModal();
-                });
-            return;
-        }
-        if (res.email) {
-            let emailErr = document.createElement('span');
-            emailErr.innerText = 'please enter a valid email';
-            formHeader.appendChild(emailErr);
-        }
-        if (res.password) {
-            let passwordErr = document.createElement('span');
-            passwordErr.innerText = `password must have ${res.password.map((i => `${i} character `))}`;
-            formHeader.appendChild(passwordErr);
-        }
+                }
+                setTimeout(cb.bind(this),1000);
+            });
     }
     catch (error) {
         console.log(error);
@@ -174,58 +175,82 @@ async function login() {
 }
 async function signup() {
     try {
-        let name = document.querySelector('input#signupName').value;
-        let email = document.querySelector('input#signupEmail').value;
-        let password = document.querySelector('input#signupPassword').value;
-        let avatar = document.querySelector('input#signupAvatar').dataset.value;
+        const nameInput = signupSection.querySelector('input#signupName');
+        const emailInput = signupSection.querySelector('input#signupEmail');
+        const passwordInput = signupSection.querySelector('input#signupPassword');
+        const avatar = signupSection.querySelector('input#signupAvatar').dataset.value;
+        const notifier = signupSection.querySelector('.notifier');
+        
+        const loader = notifier.children[0];
+        const errCtr = notifier.children[1];
+        const successCtr = notifier.children[2];
+        
+        const cb = () =>{
+            Array.from(notifier.children).forEach(ele => ele.classList.remove('show'));
+        }
 
-        res = formValidation({ name, email, password, avatar });
+        res = formValidation({ name:nameInput.value, email:emailInput.value, password:passwordInput.value, avatar });
 
-        let formHeader = signupSection.children[1];
-        formHeader.innerHTML = '';
         if (!res) {
+            loader.classList.add('show');
             await fetch(`${url.origin}/user/createUser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name, email, password, avatar })
+                body: JSON.stringify({ 
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    password: passwordInput.value,
+                    avatar
+                })
             })
                 .then(res => res.json())
                 .then(async data => {
+                    loader.classList.remove('show');
                     if (data.error) {
-                        let err = document.createElement('span');
+                        errCtr.innerHTML = "";
+                        let err = document.createElement('div');
                         err.innerText = `Email ${email} already exists`;
                         err.style.color = 'red';
-                        formHeader.appendChild(err);
+                        errCtr.appendChild(err);
+                        errCtr.classList.add('show');
                     }
                     else {
-                        console.log(data);
+                        successCtr.classList.add('show');
                         await getUserInfo();
                         closeModal();
                     }
+                    setTimeout(cb.bind(this),1000);
                 });
-            return;
         }
-        if (res.name) {
-            let err = document.createElement('span');
-            err.innerText = 'please enter a valid email';
-            formHeader.appendChild(err);
-        }
-        if (res.email) {
-            let err = document.createElement('span');
-            err.innerText = 'please enter a valid name';
-            formHeader.appendChild(err);
-        }
-        if (res.password) {
-            let err = document.createElement('span');
-            err.innerText = `password must have ${res.password.map((i => `${i} character `))}`;
-            formHeader.appendChild(err);
-        }
-        if (res.avatar) {
-            let err = document.createElement('span');
-            err.innerText = 'please choose a valid avatar';
-            formHeader.appendChild(err);
+        else{
+            errCtr.innerHTML = "";
+            if (res.name) {
+                let err = document.createElement('div');
+                err.innerText = 'please enter a valid email';
+                errCtr.appendChild(err);
+                nameInput.value = "";
+            }
+            if (res.email) {
+                let err = document.createElement('span');
+                err.innerText = 'please enter a valid name';
+                errCtr.appendChild(err);
+                emailInput.value = "";
+            }
+            if (res.password) {
+                let err = document.createElement('span');
+                err.innerText = `password must have ${res.password.map((i => `${i} character `))}`;
+                errCtr.appendChild(err);
+                passwordInput.value = "";
+            }
+            if (res.avatar) {
+                let err = document.createElement('span');
+                err.innerText = 'please choose a valid avatar';
+                errCtr.appendChild(err);
+            }
+            errCtr.classList.add('show');
+            setTimeout(cb.bind(this),500);
         }
     }
     catch (error) { 
@@ -272,9 +297,37 @@ function formValidation(obj) {
 }
 
 async function logout() {
-    await fetch(`${url.origin}/user/logout`);
-    await getUserInfo();
-    closeModal();
+    const logoutSection = document.querySelector('.logoutSection');
+    const notifier = logoutSection.querySelector('.notifier');
+    const loader = notifier.children[0];
+    const errCtr = notifier.children[1];
+    const successCtr = notifier.children[2];
+    
+    const cb = () =>{
+        Array.from(notifier.children).forEach(ele => ele.classList.remove('show'));
+    }
+
+    try{
+        loader.classList.add('show');
+        await fetch(`${url.origin}/user/logout`)
+        .then(res => res.json())
+        .then(async data => {
+            loader.classList.remove('show');
+            if(!data.error){
+                successCtr.classList.add('show');
+                await getUserInfo();
+                closeModal();
+                setTimeout(cb.bind(this),500);
+            }
+            else{
+                errCtr.innerText = data.error;
+                setTimeout(cb.bind(this),500);
+            }
+        });
+    }
+    catch(err){
+        console.log(err);
+    }
 }
 
 async function changeProfile() {

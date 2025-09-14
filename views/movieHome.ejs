@@ -16,7 +16,11 @@
                     <div class="formHeader">
                         <span>USER LOGIN</span>
                     </div>
-                    <div class="formHeader"></div>
+                    <div class="notifier">
+                        <div class="loader"></div>
+                        <div class="error"></div>
+                        <div class="success">login successful</div>
+                    </div>
                     <form class="signin">
                         <div class="login">
                             <input id="loginEmail" type="email" for="loginEmail" placeholder="">
@@ -33,7 +37,11 @@
                     <div class="formHeader">
                         <span>USER SIGNUP</span>
                     </div>
-                    <div class="formHeader"></div>
+                    <div class="notifier">
+                        <div class="loader"></div>
+                        <div class="error"></div>
+                        <div class="success">successfully registered</div>
+                    </div>
                     <form class="register">
                         <span>Please fill in to become a member of this Family!</span>
                         <div class="signup">
@@ -133,7 +141,11 @@
                     <div class="formHeader">
                         <span>LOGOUT</span>
                     </div>
-                    <div class="formHeader"></div>
+                    <div class="notifier">
+                        <div class="loader"></div>
+                        <div class="error"></div>
+                        <div class="success">logout successful</div>
+                    </div>
                     <form class="logout">
                         <span>Do You Really Want to Logout?</span>
                         <button type="button" onclick="logout()">LOGOUT</button>
@@ -307,7 +319,7 @@
                             fill="#424242" />
                         <circle cx="18.4565" cy="5.93701" r="3.5" fill="transparent" />
                     </svg>
-                    <div class="profileImage" onclick="showDropDown(this)" on="hideDropDown(this)">
+                    <div class="profileImage" tabindex="0" onclick="showDropDown(this)" onblur="hideDropDown(this)">
                         <img src="images/1.jpg" />
                         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                             fill="#424242">
@@ -678,7 +690,7 @@
         <div class="popDes">
             <DIV class="title">
                 <SPAN>Most Popular Movies</SPAN>
-                <div class="more"><a href="/movieResults?imdbRating=8"><span>View All</span>
+                <div class="more"><a href="/movieResults?rating=Above 8"><span>View All</span>
                         <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.94678 8.38721H17.9468" stroke="#1262AE" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
@@ -758,7 +770,7 @@
         <div class="recommended">
             <DIV class="title">
                 <SPAN>Top Recommended</SPAN>
-                <div class="more"><a href="/movieResults?imdbRating=9"><span>View All</span>
+                <div class="more"><a href="/movieResults?rating=Above 9"><span>View All</span>
                         <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.94678 8.38721H17.9468" stroke="#1262AE" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
@@ -850,121 +862,6 @@
                             fill="#1262AF" />
                     </svg>
                 </div>
-            </div>
-        </div>
-
-        <div class="popStays">
-            <DIV class="title">
-                <SPAN>Most Popular Stays</SPAN>
-                <div class="more"><a href="/movieResults?imdbRating=8"><span>View All</span>
-                        <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.94678 8.38721H17.9468" stroke="#1262AE" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M10.9468 1.38721L17.9468 8.38721L10.9468 15.3872" stroke="#1262AE" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></a>
-                </div>
-            </DIV>
-            <div class="cardsContainer">
-                <!-- <div class="arrowLeft">
-                    <svg class="left" width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 36.5C3 18.4127 17.6627 3.74999 35.75 3.74999C53.8373 3.74999 68.5 18.4127 68.5 36.5C68.5 54.5873 53.8373 69.25 35.75 69.25C17.6627 69.25 2.99999 54.5873 3 36.5ZM-4.50403e-06 36.5C-2.77794e-06 16.7558 16.0058 0.749988 35.75 0.749989C55.4942 0.749991 71.5 16.7558 71.5 36.5C71.5 56.2442 55.4942 72.25 35.75 72.25C16.0058 72.25 -6.23012e-06 56.2442 -4.50403e-06 36.5Z" fill="#1262AF"/>
-                        <path d="M23.9595 39.706C22.595 38.5108 22.595 36.3875 23.9595 35.1924L37.5967 23.2483C39.5362 21.5497 42.5733 22.9269 42.5733 25.5051L42.5733 49.3933C42.5733 51.9714 39.5362 53.3487 37.5967 51.6501L23.9595 39.706Z" fill="#1262AF"/>
-                    </svg>
-                    <svg class="leftHovered" width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="36.25" cy="36.5" r="35.75" fill="#1262AF"/>
-                        <path d="M24.5767 37.8163C23.2122 36.6212 23.2122 34.4979 24.5767 33.3028L38.2139 21.3587C40.1534 19.66 43.1905 21.0373 43.1905 23.6154L43.1905 47.5036C43.1905 50.0818 40.1534 51.4591 38.2139 49.7604L24.5767 37.8163Z" fill="white"/>
-                    </svg>                        
-                </div> -->
-                <!-- <div class="Container"> -->
-                <div class="card">
-                    <div class="img"><img src="images/subscribeBackground.png" alt="img"></div>
-                    <div class="details">
-                        <div class="detailRows">
-                            <span>Entire bungalow</span>
-                            <span>Matterhorn Suites</span>
-                            <span>$575/night</span>
-                        </div>
-                        <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12.5 23.1901C9.76733 23.1901 7.14661 22.1046 5.21434 20.1723C3.28207 18.24 2.19653 15.6193 2.19653 12.8867C2.19653 10.154 3.28207 7.53332 5.21434 5.60105C7.14661 3.66879 9.76733 2.58325 12.5 2.58325C15.2326 2.58325 17.8533 3.66879 19.7856 5.60105C21.7179 7.53332 22.8034 10.154 22.8034 12.8867C22.8034 15.6193 21.7179 18.24 19.7856 20.1723C17.8533 22.1046 15.2326 23.1901 12.5 23.1901ZM12.5 24.662C15.623 24.662 18.6181 23.4214 20.8264 21.2131C23.0347 19.0048 24.2753 16.0097 24.2753 12.8867C24.2753 9.76367 23.0347 6.76856 20.8264 4.56025C18.6181 2.35194 15.623 1.11133 12.5 1.11133C9.37695 1.11133 6.38184 2.35194 4.17353 4.56025C1.96522 6.76856 0.724609 9.76367 0.724609 12.8867C0.724609 16.0097 1.96522 19.0048 4.17353 21.2131C6.38184 23.4214 9.37695 24.662 12.5 24.662Z"
-                                fill="#1262AF" />
-                            <path
-                                d="M9.87124 7.88667C10.0101 7.81516 10.166 7.78336 10.3218 7.79474C10.4775 7.80612 10.6271 7.86026 10.7541 7.95118L16.6965 12.1957C16.8065 12.2743 16.8962 12.3779 16.9581 12.4981C17.02 12.6183 17.0523 12.7516 17.0523 12.8867C17.0523 13.0219 17.02 13.1552 16.9581 13.2754C16.8962 13.3956 16.8065 13.4992 16.6965 13.5778L10.7541 17.8223C10.6272 17.9132 10.4776 17.9673 10.3219 17.9786C10.1663 17.99 10.0105 17.9583 9.87164 17.8868C9.73284 17.8154 9.61641 17.7071 9.53517 17.5738C9.45392 17.4405 9.41101 17.2874 9.41113 17.1313V8.6422C9.41097 8.48614 9.45383 8.33305 9.535 8.19976C9.61617 8.06648 9.73251 7.95814 9.87124 7.88667Z"
-                                fill="#1262AF" />
-                        </svg>
-                    </div>
-                    <div class="ratings">
-                        <div class="rating">
-                            <svg width="17" height="18" viewBox="0 0 17 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.1058 6.43948L11.1163 5.65526L8.88591 0.765024C8.825 0.631132 8.72477 0.522744 8.60097 0.45686C8.29048 0.29109 7.91317 0.429232 7.75793 0.765024L5.5275 5.65526L0.538023 6.43948C0.400464 6.46074 0.274695 6.53087 0.178403 6.63713C0.0619923 6.76653 -0.00215557 6.94062 5.53105e-05 7.12115C0.00226619 7.30167 0.0706549 7.47386 0.190194 7.59988L3.80015 11.4062L2.94728 16.781C2.92728 16.9061 2.94007 17.0346 2.98421 17.1522C3.02834 17.2698 3.10205 17.3716 3.19698 17.4462C3.29191 17.5208 3.40426 17.5651 3.52129 17.5741C3.63832 17.5831 3.75535 17.5565 3.8591 17.4972L8.32192 14.9597L12.7847 17.4972C12.9066 17.5674 13.0481 17.5908 13.1837 17.5653C13.5256 17.5015 13.7555 17.1508 13.6966 16.781L12.8437 11.4062L16.4536 7.59988C16.5519 7.49574 16.6168 7.35972 16.6364 7.21096C16.6895 6.83903 16.4497 6.49474 16.1058 6.43948Z"
-                                    fill="#FDBF00" />
-                            </svg>
-                            <span>4.9</span>
-                        </div>
-                        <span>(60 reviews)</span>
-                    </div>
-                    <button>MORE DETAILS</button>
-                </div>
-                <div class="loader">
-                    <div class="wrapper">
-                        <div class="img"></div>
-                        <div class="details">
-                            <div class="detailRows">
-                                <div class="line1"></div>
-                                <div class="line2"></div>
-                                <div class="line3"></div>
-                            </div>
-                            <div class="circle"></div>
-                        </div>
-                        <div class="ratings"></div>
-                        <div class="btn"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="images/subscribeBackground.png" alt="img"></div>
-                    <div class="details">
-                        <div class="detailRows">
-                            <span>Entire bungalow</span>
-                            <span>Matterhorn Suites</span>
-                            <span>$575/night</span>
-                        </div>
-                        <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12.5 23.1901C9.76733 23.1901 7.14661 22.1046 5.21434 20.1723C3.28207 18.24 2.19653 15.6193 2.19653 12.8867C2.19653 10.154 3.28207 7.53332 5.21434 5.60105C7.14661 3.66879 9.76733 2.58325 12.5 2.58325C15.2326 2.58325 17.8533 3.66879 19.7856 5.60105C21.7179 7.53332 22.8034 10.154 22.8034 12.8867C22.8034 15.6193 21.7179 18.24 19.7856 20.1723C17.8533 22.1046 15.2326 23.1901 12.5 23.1901ZM12.5 24.662C15.623 24.662 18.6181 23.4214 20.8264 21.2131C23.0347 19.0048 24.2753 16.0097 24.2753 12.8867C24.2753 9.76367 23.0347 6.76856 20.8264 4.56025C18.6181 2.35194 15.623 1.11133 12.5 1.11133C9.37695 1.11133 6.38184 2.35194 4.17353 4.56025C1.96522 6.76856 0.724609 9.76367 0.724609 12.8867C0.724609 16.0097 1.96522 19.0048 4.17353 21.2131C6.38184 23.4214 9.37695 24.662 12.5 24.662Z"
-                                fill="#1262AF" />
-                            <path
-                                d="M9.87124 7.88667C10.0101 7.81516 10.166 7.78336 10.3218 7.79474C10.4775 7.80612 10.6271 7.86026 10.7541 7.95118L16.6965 12.1957C16.8065 12.2743 16.8962 12.3779 16.9581 12.4981C17.02 12.6183 17.0523 12.7516 17.0523 12.8867C17.0523 13.0219 17.02 13.1552 16.9581 13.2754C16.8962 13.3956 16.8065 13.4992 16.6965 13.5778L10.7541 17.8223C10.6272 17.9132 10.4776 17.9673 10.3219 17.9786C10.1663 17.99 10.0105 17.9583 9.87164 17.8868C9.73284 17.8154 9.61641 17.7071 9.53517 17.5738C9.45392 17.4405 9.41101 17.2874 9.41113 17.1313V8.6422C9.41097 8.48614 9.45383 8.33305 9.535 8.19976C9.61617 8.06648 9.73251 7.95814 9.87124 7.88667Z"
-                                fill="#1262AF" />
-                        </svg>
-                    </div>
-                    <div class="ratings">
-                        <div class="rating">
-                            <svg width="17" height="18" viewBox="0 0 17 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.1058 6.43948L11.1163 5.65526L8.88591 0.765024C8.825 0.631132 8.72477 0.522744 8.60097 0.45686C8.29048 0.29109 7.91317 0.429232 7.75793 0.765024L5.5275 5.65526L0.538023 6.43948C0.400464 6.46074 0.274695 6.53087 0.178403 6.63713C0.0619923 6.76653 -0.00215557 6.94062 5.53105e-05 7.12115C0.00226619 7.30167 0.0706549 7.47386 0.190194 7.59988L3.80015 11.4062L2.94728 16.781C2.92728 16.9061 2.94007 17.0346 2.98421 17.1522C3.02834 17.2698 3.10205 17.3716 3.19698 17.4462C3.29191 17.5208 3.40426 17.5651 3.52129 17.5741C3.63832 17.5831 3.75535 17.5565 3.8591 17.4972L8.32192 14.9597L12.7847 17.4972C12.9066 17.5674 13.0481 17.5908 13.1837 17.5653C13.5256 17.5015 13.7555 17.1508 13.6966 16.781L12.8437 11.4062L16.4536 7.59988C16.5519 7.49574 16.6168 7.35972 16.6364 7.21096C16.6895 6.83903 16.4497 6.49474 16.1058 6.43948Z"
-                                    fill="#FDBF00" />
-                            </svg>
-                            <span>4.9</span>
-                        </div>
-                        <span>(60 reviews)</span>
-                    </div>
-                    <button>MORE DETAILS</button>
-                </div>
-                <!-- </div> -->
-                <!-- <div class="arrowRight">
-                    <svg class="right" width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 36.5C3 18.4127 17.6627 3.74999 35.75 3.74999C53.8373 3.74999 68.5 18.4127 68.5 36.5C68.5 54.5873 53.8373 69.25 35.75 69.25C17.6627 69.25 2.99999 54.5873 3 36.5ZM-4.50403e-06 36.5C-2.77794e-06 16.7558 16.0058 0.749988 35.75 0.749989C55.4942 0.749991 71.5 16.7558 71.5 36.5C71.5 56.2442 55.4942 72.25 35.75 72.25C16.0058 72.25 -6.23012e-06 56.2442 -4.50403e-06 36.5Z" fill="#1262AF"/>
-                        <path d="M46.6137 33.3028C47.9783 34.4979 47.9783 36.6213 46.6137 37.8164L32.9765 49.7605C31.037 51.4591 27.9999 50.0818 27.9999 47.5037L27.9999 23.6155C27.9999 21.0373 31.037 19.6601 32.9765 21.3587L46.6137 33.3028Z" fill="#1262AF"/>
-                    </svg>
-                    <svg class="rightHovered" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="35.75" cy="35.75" r="35.75" fill="#1262AF"/>
-                        <path d="M47.5405 32.544C48.905 33.7392 48.905 35.8625 47.5405 37.0576L33.9033 49.0017C31.9638 50.7003 28.9267 49.3231 28.9267 46.7449L28.9267 22.8567C28.9267 20.2786 31.9638 18.9013 33.9033 20.5999L47.5405 32.544Z" fill="white"/>
-                    </svg>
-                </div> -->
             </div>
         </div>
     </div>

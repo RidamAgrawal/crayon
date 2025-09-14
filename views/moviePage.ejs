@@ -308,7 +308,7 @@
                             fill="#424242" />
                         <circle cx="18.4565" cy="5.93701" r="3.5" fill="transparent" />
                     </svg>
-                    <div class="profileImage">
+                    <div class="profileImage" tabindex="0" onclick="showDropDown(this)" onblur="hideDropDown(this)">
                         <img src="images/1.jpg" />
                         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                             fill="#424242">
@@ -394,8 +394,36 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <button onclick="showTrailer()">Watch Trailer</button>
-                        <button onclick="addToWishList()">To Watchlist</button>
+                        <button onclick="showTrailer()">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                height="24px" viewBox="0 -960 960 960" width="24px" fill="#424242">
+                                <path d="m160-800 80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800Zm0 240v320h640v-320H160Zm0 0v320-320Z"/>
+                            </svg>
+                            <div>Watch Trailer</div>
+                        </button>
+                        <!-- <div class="apiToggleButton displayInlineBlock">
+                            <button class="wishlist" onclick="addToWishlist()">
+                                <div class="addToWishlist">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        height="24px" viewBox="0 -960 960 960" width="24px">
+                                        <path d="M200-120v-640q0-33 23.5-56.5T280-840h240v80H280v518l200-86 200 86v-278h80v400L480-240 200-120Zm80-640h240-240Zm400 160v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/>
+                                    </svg>
+                                    <div>To Watchlist</div>
+                                </div>
+                                <div class="removeFromWishlist hide">
+                                    <svg xmlns="http://www.w3.org/2000/svg" 
+                                        height="24px" viewBox="0 -960 960 960" width="24px" fill="#424242">
+                                        <path d="M840-680H600v-80h240v80ZM200-120v-640q0-33 23.5-56.5T280-840h240v80H280v518l200-86 200 86v-278h80v400L480-240 200-120Zm80-640h240-240Z"/>
+                                    </svg>
+                                    <div>Remove</div>
+                                </div>
+                            </button>
+                            <div class="status displayInlineBlock">
+                                <div class="loader hide"></div>
+                                <div class="success"></div>
+                                <div class="failed"></div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="makers">
@@ -563,6 +591,8 @@
             <% if(process.env.YOUTUBE_API_KEY){%>
                 <div class="YOUTUBE_API" style="display:none;" data-api_key="<%=process.env.YOUTUBE_API_KEY%>"></div>
                 <%} %>
+                    <script src="/scripts/utility.js"></script>
+                    <script src="/scripts/toggleButton.js"></script>
                     <script src="/scripts/headerAuth.js"></script>
                     <script src="/scripts/moviePage.js"></script>
 </body>

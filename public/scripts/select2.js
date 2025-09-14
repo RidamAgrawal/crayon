@@ -1,5 +1,5 @@
 
-export default class select2 {
+class select2 {
     label = 'test';
     options = ['1', '2', '3'];
     _value = new Set();
@@ -10,7 +10,7 @@ export default class select2 {
         if (Array.isArray(values)) {
             const newValues = new Set(values);
             newValues.forEach(value=>{
-                if(!this._value.has(value)){
+                if(this.options.includes(value) && !this._value.has(value)){
                     this.toggleValue(value);
                 }
             });
@@ -29,7 +29,7 @@ export default class select2 {
     constructor(label, options) {
         if (typeof label == 'string' && Array.isArray(options)) {
             this.label = label;
-            this.options = options;
+            this.options = [...new Set(options)];
             this.filteredOptions = options;
         }
         this.focusSelect = this.focusSelect.bind(this);
@@ -78,7 +78,7 @@ export default class select2 {
 
     focusSelect(event) {
         const inputEle = this.holder.querySelector('input');
-        if (event.target?.dataset.hasOwnProperty(inputEle.id)) {
+        if (event.target?.dataset[inputEle.id] !== undefined) {
             const chipLabel = event.target.dataset[inputEle.id];
             this.toggleValue(chipLabel);
             return;
@@ -89,7 +89,7 @@ export default class select2 {
 
     focusOutSelect(event) {
         const inputEle = event.target;
-        if (event.relatedTarget?.dataset?.hasOwnProperty(inputEle.id)) {
+        if (event.relatedTarget?.dataset[inputEle.id] !== undefined) {
             const chipLabel = event.relatedTarget.dataset[inputEle.id];
             this.toggleValue(chipLabel);
             inputEle.focus();
@@ -124,7 +124,7 @@ export default class select2 {
     toggleOption(optionLabel) {
         Array.from(this.listElement.children[0].children)
             .forEach(option => {
-                if (option.dataset.hasOwnProperty(this.label) && option.dataset[this.label] == optionLabel) {
+                if (option.dataset[this.label] && option.dataset[this.label] == optionLabel) {
                     option.classList.toggle('hide');
                 }
             })
@@ -132,22 +132,22 @@ export default class select2 {
 
     createChip(label) {
         const selectedFilter = document.createElement('div');
-        selectedFilter.classList.add('selectedFilter', label);
+        selectedFilter.classList.add('selectedFilter', toValidClassName(label));
         const chipLabel = document.createElement('span');
         chipLabel.textContent = label;
         selectedFilter.appendChild(chipLabel);
 
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
+        const svgNS = "http://www.w3.org/2000/closeIcon";
+        const closeIcon = document.createElementNS(svgNS, "closeIcon");
 
         // Set SVG attributes
-        svg.setAttribute("height", "16px");
-        svg.setAttribute("viewBox", "0 -960 960 960");
-        svg.setAttribute("width", "16px");
-        svg.setAttribute("fill", "#424242");
-        svg.setAttribute("tabindex", 0);
+        closeIcon.setAttribute("height", "16px");
+        closeIcon.setAttribute("viewBox", "0 -960 960 960");
+        closeIcon.setAttribute("width", "16px");
+        closeIcon.setAttribute("fill", "#424242");
+        closeIcon.setAttribute("tabindex", 0);
         // Set dynamic attribute as in your example
-        svg.setAttribute(`data-${this.label}`, label);
+        closeIcon.setAttribute(`data-${this.label}`, label);
 
         // Create the path element in SVG namespace
         const path = document.createElementNS(svgNS, "path");
@@ -155,14 +155,14 @@ export default class select2 {
         path.setAttribute("d", "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z");
 
         // Append path to SVG, and SVG to container
-        svg.appendChild(path);
-        selectedFilter.appendChild(svg);
+        closeIcon.appendChild(path);
+        selectedFilter.appendChild(closeIcon);
         return selectedFilter;
     }
 
     toggleChip(chipLabel) {
         const chipsHolder = this.holder.querySelector('.chipsHolder');
-        const targetChip = chipsHolder.querySelector('.' + CSS.escape(chipLabel));
+        const targetChip = chipsHolder.querySelector('.' + toValidClassName(chipLabel));
         if (targetChip) {
             targetChip.classList.toggle('hide');
         }
@@ -201,4 +201,5 @@ export default class select2 {
             cb(this.value);
         }
     }
+    
 }

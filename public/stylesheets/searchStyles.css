@@ -93,10 +93,10 @@
 }
 
 .searchResults .filter .title {
-    color: #1262af;
+    color: #57575d;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: lighter;
     margin-bottom: 14px;
 }
 
@@ -194,14 +194,15 @@
     }
 }
 
-.searchResults .resultsContainer .filter .genres:hover,
-.searchResults .resultsContainer .filter .rating:hover,
-.searchResults .resultsContainer .filter .language:hover,
-.searchResults .resultsContainer .filter .countries:hover {
+.searchResults .resultsContainer .filter .genres.focused,
+.searchResults .resultsContainer .filter .rating.focused,
+.searchResults .resultsContainer .filter .language.focused,
+.searchResults .resultsContainer .filter .countries.focused {
     grid-template-rows: auto 1fr;
 
     div>svg {
         rotate: 180deg;
+        transition: 0.3s;
     }
 }
 
@@ -353,6 +354,24 @@
 .searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .locations {
     background-color: #f8f9fb;
     border-radius: 4px;
+}
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .details .class{
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: smaller;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #57575d;
+}
+.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard .provider{
+    color: #57575d;
+    font-weight: normal;
 }
 
 .searchResults .resultsContainer .resultsSection .recentlyBooked .recentCards .showMore {

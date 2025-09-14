@@ -115,7 +115,9 @@
     color: #1262af;
 }
 .heroSection .movieDetails .movieContent .aboutMovie .buttons{
-
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
 }
 .heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(1){
     font-family: 'Roboto',sans-serif;
@@ -128,7 +130,14 @@
     border: 1px solid transparent;
     transition: all 0.3s ease;
     cursor: pointer;
+    min-width: 150px;
+    min-height: 64px;
 }
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(1) svg{
+    fill: white;
+    transition: 0.3s;
+}
+
 .heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(2){
     font-family: 'Roboto',sans-serif;
     font-weight: 300;
@@ -140,15 +149,41 @@
     border: 1px solid #1262af;
     transition: all 0.3s ease;
     cursor: pointer;
+    min-width: 150px;
+    min-height: 64px;
 }
+
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(2) svg{
+    fill: #1262af;
+    transition: 0.3s;
+}
+
 .heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(1):hover{
     color: #1262af;
     background-color: white;
     border: 1px solid #1262af;
 }
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(1):hover svg{
+    fill: #1262af;
+}
+
 .heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(2):hover{
     color: white;
     background-color: #1262af;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(2):hover svg{
+    fill: white;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons button:nth-child(2):hover .loader{
+    border-color: white;
+    border-left-color: #1262af;
+    transition: 0.3s;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons .apiToggleButton .hide{
+    display: none;
+}
+.heroSection .movieDetails .movieContent .aboutMovie .buttons .apiToggleButton :disabled{
+    opacity: 0.2;
 }
 .heroSection .movieDetails .movieContent .makers{
     display: flex;
@@ -318,4 +353,25 @@
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+/* loader css must be moved to styles or common */
+.loader {
+  border: 4px solid #1262af;
+  border-left-color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transition: 0.3s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

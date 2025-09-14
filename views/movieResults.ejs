@@ -300,7 +300,7 @@
                             fill="#424242" />
                         <circle cx="18.4565" cy="5.93701" r="3.5" fill="transparent" />
                     </svg>
-                    <div class="profileImage">
+                    <div class="profileImage" tabindex="0" onclick="showDropDown(this)" onblur="hideDropDown(this)">
                         <img src="images/1.jpg" />
                         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
                             fill="#424242">
@@ -340,7 +340,7 @@
                         <label for="searchInput">movie</label>
                         <ul class="select hide"></ul>
                     </div>
-                    <button id="searchBtn" onclick="showNew()">SEARCH</button>
+                    <button id="searchBtn" onclick="showNewSearch()">SEARCH</button>
                 </div>
                 <div class="caution searchCaution hide"><span>*search cannot be empty</span></div>
                 <div class="titleGroup">
@@ -418,7 +418,7 @@
                         <input type="number" id="year" placeholder="">
                         <label for="year">year</label>
                     </div>
-                    <button id="filterBtn" onclick="showNew()">FILTER</button>
+                    <button id="filterBtn" onclick="showNewFilter()">FILTER</button>
                 </div>
                 <div class="caution filterCaution hide"><span>*filters cannot be empty</span></div>
             </div>
@@ -429,17 +429,11 @@
         <div class="resultsContainer">
             <div class="filter">
                 <p class="title">FILTER</p>
-                <!-- <div class="activeFilters">
-                    <div class="activeGenres"></div>
-                    <div class="activeRating"></div>
-                    <div class="activeLanguage"></div>
-                    <div class="activeCountries"></div>
-                </div> -->
-                <div class="genres">
+                <div class="dropdown genres">
                     <div class="title">
                         <span>Genres</span>
-                        <div class="activeGenres"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        <!-- <div class="activeGenres">removed this additional showoff bcz conjusted</div> -->
+                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
                             viewBox="0 -960 960 960" width="24px" fill="#424242">
                             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
                         </svg>
@@ -696,11 +690,11 @@
                         </span>
                     </div>
                 </div>
-                <div class="rating">
+                <div class="dropdown rating">
                     <div class="title">
                         <span>Rating</span>
-                        <div class="activeRating"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        <!-- <div class="activeRating"></div> -->
+                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
                             viewBox="0 -960 960 960" width="24px" fill="#424242">
                             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
                         </svg>
@@ -788,11 +782,11 @@
                         </span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="dropdown language">
                     <div class="title">
                         <span>Language</span>
-                        <div class="activeLanguage"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        <!-- <div class="activeLanguage"></div> -->
+                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
                             viewBox="0 -960 960 960" width="24px" fill="#424242">
                             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
                         </svg>
@@ -930,11 +924,11 @@
                         </span>
                     </div>
                 </div>
-                <div class="countries">
+                <div class="dropdown countries">
                     <div class="title">
                         <span>Countries</span>
-                        <div class="activeCountries"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        <!-- <div class="activeCountries"></div> -->
+                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
                             viewBox="0 -960 960 960" width="24px" fill="#424242">
                             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
                         </svg>
@@ -1097,7 +1091,7 @@
                 <div class="flightCardsContainer">
                     <div class="flightCards">
                         <div>
-                            <span>10 out of 177 Results</span>
+                            <span>0 out of 0 Results</span>
                         </div>
                         <div class="flightCard">
                             <div class="airline">
@@ -1143,12 +1137,12 @@
                             </div>
                         </div>
                         <button class="showMore">
-                            Show More Results
+                            No More Results
                         </button>
                     </div>
                 </div>
                 <div class="recentlyBooked">
-                    <div class="title">RECENTLY SEARCHED</div>
+                    <div class="title">WISHLIST</div>
                     <div class="recentCards">
                         <div class="recentCard">
                             <div class="airlinePrice">
@@ -1369,9 +1363,10 @@
     </footer>
     <% if(query){%>
         <div class="filterQuery" style="display:none;" data-query="<%=JSON.stringify(query)%>"></div>
-        <%} %>
-            <script src="/scripts/headerAuth.js"></script>
-            <script src="/scripts/movieResults.js" type="module"></script>
+    <%} %>
+    <script src="/scripts/utility.js"></script>
+    <script src="/scripts/select2.js"></script>
+    <script src="/scripts/headerAuth.js"></script>
+    <script src="/scripts/movieResults.js"></script>
 </body>
-
 </html>

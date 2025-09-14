@@ -24,9 +24,20 @@ router.get('/movieId', async (req, res) => {
             let decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
             let { name, email, avatar, id } = decoded;
             
-            await userModel.findByIdAndUpdate(id,{
-            $push: {searches: {movie:movieId} },
-        });
+            const user = await userModel.findById(id);
+            
+            const existingVisit = user.visited.find(v => v.movie.toString() === movieId);
+
+            if (existingVisit) {
+                await userModel.updateOne(
+                    { _id: id, "visited.movie": movieId },
+                    { $set: { "visited.$.createdAt": new Date() } }
+                );
+            } else {
+                await userModel.findByIdAndUpdate(id, {
+                    $push: { visited: { movie: movieId } }
+                });
+            }
         }
 
         res.status(200).json(movieItem);
@@ -38,10 +49,13 @@ router.get('/movieId', async (req, res) => {
 
 router.post('/filter', async (req, res) => {
 
-    let { genres, imdbRating, imdbVotes, languages, countries, duration, year, page, limit, search } = req.body;
+    let { genres, rating, imdbVotes, languages, countries, duration, year, page, limit, search } = req.body;
     if (search) {
 
         let movieItem = await movieModel.find({ title: { $regex: search, $options: 'i' } });
+        await userModel.findByIdAndUpdate(id,{
+            $push: {searches: search },
+        });
         res.json(movieItem);
         return;
     }
@@ -56,8 +70,8 @@ router.post('/filter', async (req, res) => {
     else {
         filters["imdb.votes"] = { $ne: "" };
     }
-    if (imdbRating) {
-        filters["imdb.rating"] = { $gte: parseFloat(imdbRating), $ne: "" };
+    if (rating && isNaN(rating) ) {
+        filters["imdb.rating"] = { $gte: parseFloat(+rating), $ne: "" };
     }
     else {
         filters["imdb.rating"] = { $ne: "" };
@@ -76,7 +90,6 @@ router.post('/filter', async (req, res) => {
     }
     if (page) { page = parseInt(page); }
     else { page = 0; }
-
     let movieItems = await movieModel.find(filters).sort({ 'imdb.rating': -1 }).skip(page * limit).limit(limit);
     res.json(movieItems);
 });

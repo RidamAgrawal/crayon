@@ -20,6 +20,10 @@ body {
     width: 100%;
 }
 
+.displayInlineBlock{
+    display: inline-block;
+}
+
 body.noScroll {
     overflow: hidden;
 }
@@ -83,6 +87,42 @@ body.noScroll {
 .modal .modalContent .modalContentSection form {
     div {
         width: 100% !important;
+    }
+}
+
+.modal .modalContent .modalContentSection{
+    display: none;
+}
+
+.modal .modalContent .modalContentSection.show{
+    display: block;
+}
+.modal .modalContent .modalContentSection .notifier{
+    display: flex;
+    justify-content: center;
+}
+.modal .modalContent .modalContentSection .notifier > div{
+    display: none;
+}
+.modal .modalContent .modalContentSection .notifier .show{
+    display: block;
+}
+.modal .modalContent .modalContentSection .notifier .loader {
+    border: 4px solid #1262af;
+    border-left-color: transparent;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -168,6 +208,7 @@ header nav .navRight .accountsSection .profileImage {
     width: 40px;
     height: 40px;
     position: relative;
+    display: inline-block;
 }
 
 header nav .navRight .accountsSection .profileImage img,

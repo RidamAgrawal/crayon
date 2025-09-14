@@ -74,14 +74,14 @@ const fetchTopMovies = async () => {
         },
         body: JSON.stringify({
             imdbVotes: '4000',
-            limit: '7'
+            limit: '8'
         })
     })
         .then(res => res.json())
         .then(data => {
             data = data.filter((itm, index, self) => index === self.findIndex((t) => (t.title === itm.title)));
             // console.log(data);
-            popDesContainer.children[1].children[1].innerHTML='';
+            popDesContainer.children[1].children[1].innerHTML = '';
             Array.from(prepareCards1(data)).forEach(itm => {
                 popDesContainer.children[1].children[1].appendChild(itm);
             });
@@ -120,7 +120,7 @@ const fetchTopRecommended = async () => {
                 data.pop();
             }
             // console.log(data);
-            recommendedContainer.children[1].children[1].innerHTML='';
+            recommendedContainer.children[1].children[1].innerHTML = '';
             Array.from(prepareCards2(data)).forEach(itm => { recommendedContainer.children[1].children[1].appendChild(itm); });
         });
 }
@@ -283,16 +283,36 @@ async function showRecentSearches() {
         },
         body: JSON.stringify({})
     })
-    .then(res=>res.json())
+    .then(res => res.json())
 
-    debugger;
     if (user.hasOwnProperty('error')) {
         console.log(user);
         return [];
     }
-    debugger;
-    const searches=await fetch(url.origin + '/user/searches/' + user.id)
+    const searches = await fetch(url.origin + '/user/visited/' + user.id)
         .then(res => res.json())
-        debugger
-    return searches.searches;
+        
+    const recentsContainerTileHolder = recentsContainer.querySelector('.Container');
+    if (recentsContainerTileHolder && Array.isArray(searches.visitedMovies)) {
+        if(searches.visitedMovies.length < 4){
+            recentsContainerTileHolder.innerHTML = 'No recently visited movies!';
+            return ;
+        }
+        if(searches.visitedMovies.length%2){searches.visitedMovies.pop();}
+        recentsContainerTileHolder.innerHTML = '';
+        searches.visitedMovies.forEach(search => {
+            const visitedDate=new Date(search.visitedAt);
+            recentsContainerTileHolder.innerHTML += `<div class="flightContainer">
+                        <div class="toFrom">
+                            <img width='50  %' height='80px' src="${search.poster}" alt="movieImage">
+                            <div class="to">
+                                <span><a href="${url.origin}/moviePage?movieId=${search.movieId}">${search.title}</a></span>
+                                <div class="date"><b>Visited on:</b> ${visitedDate.toDateString()}</div>
+                            </div>
+                        </div>
+                    </div>`;
+        })
+    }
 }
+
+showRecentSearches();

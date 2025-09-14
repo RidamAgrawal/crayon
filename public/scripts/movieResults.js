@@ -1,9 +1,9 @@
-import select2 from './select2.js';
 
 const searchForm = document.querySelector('.searchForm');
 const resultsSection = document.querySelector('.resultsSection');
 const query = document.querySelector('.filterQuery');
 const filterSection = document.querySelector('.filter');
+const wishlistSection = document.querySelector('.recentlyBooked');
 let page = -1;
 let limit = 10;
 
@@ -49,7 +49,7 @@ filterMap.forEach((selects,filterKey)=>{
                 activeFilter.innerHTML='';
                 arr.forEach(
                     (label)=>{
-                        activeFilter.innerHTML+=`<div class='selectedFilter'><span>${label}</span><svg data-genres='${label}' xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#424242"><path data-genres='${label}' d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>`;
+                        activeFilter.innerHTML+=`<div class='selectedFilter'><span>${label}</span><svg data-${filterKey}='${label}' xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#424242"><path data-${filterKey}='${label}' d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>`;
                     }
                 )
             }
@@ -71,7 +71,6 @@ async function filterMovie(filter) {
 }
 
 async function searchMovie(movieTitle) {
-    // if(movieTitle.length<=2){return undefined;}
     page++;
     return await fetch(`${url.origin}/movies/search`, {
         method: 'POST',
@@ -84,29 +83,22 @@ async function searchMovie(movieTitle) {
         })
     })
         .then((res) => res.json())
-        .then(showResults);
-    //here directly the data is returned through this method
 }
 
 async function filterCaller() {
     let filter = {}
-    // const genresInput = searchForm.querySelector('input#genres');
-    const ratingInput = searchForm.querySelector('input#rating');
-    const languageInput = searchForm.querySelector('input#language');
-    const countriesInput = searchForm.querySelector('input#countries');
     const durationInput = searchForm.querySelector('input#duration');
     const yearInput = searchForm.querySelector('input#year');
-    const searchInput = searchForm.querySelector('input#searchInput');
+    
 
-    if (searchInput.value) {
-        searchMovie(searchInput.value);
-        return;
-    }
-
-    // if (genresInput.value) { filter.genres = genresInput.value; }
-    if (ratingInput.value) { filter.rating = ratingInput.value; }
-    if (languageInput.value) { filter.language = languageInput.value; }
-    if (countriesInput.value) { filter.countries = countriesInput.value; }
+    filterMap.forEach((selects, filterKey) => {
+        if (selects instanceof select2 && selects.value.length > 0 ) { 
+            filter[filterKey] = selects.value.join(',');
+            if(filterKey == 'rating'){
+                filter[filterKey] = selects.value[0].split(' ')[1]; 
+            }
+        }
+    })
     if (durationInput.value) { filter.duration = durationInput.value; }
     if (yearInput.value) { filter.year = yearInput.value; }
 
@@ -129,24 +121,23 @@ async function filterCaller() {
     filter.limit = limit;
     let res = await filterMovie(filter);
     console.log(res);
-    showResults(res);
+    showResults(res,filter);
 }
 
-function showResults(items) {
-    let inputQuery = JSON.parse(query.dataset.query);
+function showResults(items,filterQuery) {
     const movieCards = resultsSection.querySelector('.flightCards');
     if (page == 0) {
         movieCards.innerHTML = '';
         movieCards.innerHTML += `<div>
         <span>Showing ${page * limit} out of 1000 Results:</span>
         <h3>filter</h3>
-            ${inputQuery.hasOwnProperty('genres') ? `<div><span>genres:</span><span>${inputQuery.genres}</span></div>` : ''}
-            ${inputQuery.hasOwnProperty('imdbRating') ? `<div><span>rating:</span><span>${inputQuery.imdbRating}</span></div>` : ''}
-            ${inputQuery.hasOwnProperty('language') ? `<div><span>language:</span><span>${inputQuery.language}</span></div>` : ''}
-            ${inputQuery.hasOwnProperty('countries') ? `<div><span>language:</span><span>${inputQuery.countries}</span></div>` : ''}
-            ${inputQuery.hasOwnProperty('duration') ? `<div><span>language:</span><span>${inputQuery.countries}</span></div>` : ''}
-            ${inputQuery.hasOwnProperty('year') ? `<div><span>language:</span><span>${inputQuery.year}</span></div>` : ''}
-            ${inputQuery.hasOwnProperty('search') ? `<div><span>search:</span><span>${inputQuery.search}</span></div>` : ''}
+            ${filterQuery.hasOwnProperty('genres') ? `<div><span>genres:</span><span>${filterQuery.genres}</span></div>` : ''}
+            ${filterQuery.hasOwnProperty('rating') ? `<div><span>rating:</span><span>${filterQuery.rating}</span></div>` : ''}
+            ${filterQuery.hasOwnProperty('language') ? `<div><span>language:</span><span>${filterQuery.language}</span></div>` : ''}
+            ${filterQuery.hasOwnProperty('countries') ? `<div><span>countries:</span><span>${filterQuery.countries}</span></div>` : ''}
+            ${filterQuery.hasOwnProperty('duration') ? `<div><span>duration:</span><span>${filterQuery.duration}</span></div>` : ''}
+            ${filterQuery.hasOwnProperty('year') ? `<div><span>year:</span><span>${filterQuery.year}</span></div>` : ''}
+            ${filterQuery.hasOwnProperty('search') ? `<div><span>search:</span><span>${filterQuery.search}</span></div>` : ''}
     </div>`;
     }
     else { movieCards.removeChild(movieCards.lastElementChild); }
@@ -208,8 +199,39 @@ async function checkQuery() {
     }
     if (filter.duration) { durationInput.value = filter.duration; }
     if (filter.year) { yearInput.value = filter.year; }
-    if (filter.search) { searchInput.value = filter.search; }
+    if (filter.search) {
+        searchInput.value = filter.search;
+        showNewSearch();
+    }
 
+    if (Object.keys(filter).length > 0) { filterCaller(); }
+}
+
+
+async function showNewSearch(){
+    page=-1;
+    const searchInput = searchForm.querySelector('input#searchInput');
+
+    if (searchInput.value) {
+        let res = await searchMovie(searchInput.value);
+        console.log(res);
+        showResults(res,{ search : searchInput.value });
+    }
+    else{
+        if (filterTimer) {
+            clearTimeout(filterTimer);
+        }
+        else {
+            document.querySelector('.caution.searchCaution').classList.toggle('hide');
+        }
+        filterTimer = setTimeout(() => {
+            document.querySelector('.caution.searchCaution').classList.toggle('hide');
+            filterTimer = null;
+        }, 1000);
+    }
+}
+function showNewFilter(){
+    page=-1;
     filterCaller();
 }
 checkQuery();
@@ -219,17 +241,93 @@ filterSection.addEventListener('click', handleFilterSection);
 function handleFilterSection(event) {
     let element = event.target;
     const filterKey = Object.keys(element.dataset)[0];
-    filterMap.get(filterKey)?.toggleValue(element.dataset[filterKey]);
+    if(filterKey) {
+        filterMap.get(filterKey)?.toggleValue(element.dataset[filterKey]);
+    }
 }
 
-function debounce(func, delay) {
-    let timeout;
-    return function () {
-        const args = arguments;
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            func.apply(context, args)
-        }, delay);
+async function getWishlist(){
+    await fetch(url.origin+'/user/wishlist')
+    .then((res) => res.json())
+    .then((data) => {
+        if(data.wishlist && Array.isArray(data.wishlist)){
+            const wishlistCardsContainer=wishlistSection.querySelector('.recentCards');
+            if(wishlistCardsContainer){
+                wishlistCardsContainer.innerHTML='';
+                data.wishlist.forEach(wishlistedMovie => {
+                    const movieDetails=wishlistedMovie.movie;
+                    wishlistCardsContainer.innerHTML+=`<div class="recentCard">
+                                <div class="locations">
+                                    <div class="departure">
+                                        <span>${movieDetails.title}</span>
+                                        <span>${movieDetails.year || ''}</span>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <div class="class">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            height="14px" viewBox="0 -960 960 960" width="16px" fill="#7E8B97">
+                                            <path 
+                                                d="M400-240q50 0 85-35t35-85v-280h120v-80H460v256q-14-8-29-12t-31-4q-50 0-85 35t-35 85q0 50 35 85t85 35Zm80 160q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                                                stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <span>${movieDetails.genres.at(0) || 'no genres'}</span>
+                                    </div>
+                                    <div class="class">
+                                        <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.0664 12.7429V11.4762C11.0664 10.8043 10.7995 10.16 10.3244 9.68487C9.84935 9.20978 9.20499 8.94287 8.53311 8.94287H3.46644C2.79456 8.94287 2.15019 9.20978 1.6751 9.68487C1.20001 10.16 0.933105 10.8043 0.933105 11.4762V12.7429"
+                                                stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M5.99964 6.40956C7.39876 6.40956 8.53298 5.27535 8.53298 3.87623C8.53298 2.47711 7.39876 1.3429 5.99964 1.3429C4.60052 1.3429 3.46631 2.47711 3.46631 3.87623C3.46631 5.27535 4.60052 6.40956 5.99964 6.40956Z"
+                                                stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14.8664 12.7428V11.4762C14.866 10.9149 14.6792 10.3696 14.3353 9.92597C13.9914 9.48235 13.5099 9.1655 12.9664 9.02517M10.4331 1.42517C10.978 1.56469 11.461 1.88161 11.8059 2.32597C12.1509 2.77032 12.3381 3.31683 12.3381 3.87934C12.3381 4.44185 12.1509 4.98835 11.8059 5.43271C11.461 5.87706 10.978 6.19398 10.4331 6.3335"
+                                                stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <span>${movieDetails.comments?.length || 0} comments</span>
+                                    </div>
+                                    <div class="class">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            height="14px" viewBox="0 -960 960 960" width="16px" fill="#7E8B97">
+                                                <path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
+                                                stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <span>${movieDetails.likes?.length || 0} likes</span>
+                                    </div>
+                                    <div class="class">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            height="14px" viewBox="0 -960 960 960" width="16px" fill="#7E8B97">
+                                            <path 
+                                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm163 450 117-71 117 71-31-133 104-90-137-11-53-126-53 126-137 11 104 90-31 133Z"
+                                                stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <span>${movieDetails.imdb.rating}</span>
+                                    </div>
+                                </div>
+                                <div class="provider">
+                                    <span>added</span>
+                                    <span>${timePassedTillNow(wishlistedMovie.createdAt)} ago!</span>
+                                </div>
+                            </div>`
+                })
+            }
+        }
+    })
+}
+getWishlist();
+
+function toggleFilterDropdown(event){
+    const element=event.target;
+    const target=element.closest('.dropdown');
+    if(target){
+        target.classList.toggle('focused');
     }
 }
