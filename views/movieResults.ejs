@@ -18,7 +18,11 @@
                     <div class="formHeader">
                         <span>USER LOGIN</span>
                     </div>
-                    <div class="formHeader"></div>
+                    <div class="notifier">
+                        <div class="loader"></div>
+                        <div class="error"></div>
+                        <div class="success">login successful</div>
+                    </div>
                     <form class="signin">
                         <div class="login">
                             <input id="loginEmail" type="email" for="loginEmail" placeholder="">
@@ -35,7 +39,11 @@
                     <div class="formHeader">
                         <span>USER SIGNUP</span>
                     </div>
-                    <div class="formHeader"></div>
+                    <div class="notifier">
+                        <div class="loader"></div>
+                        <div class="error"></div>
+                        <div class="success">login successful</div>
+                    </div>
                     <form class="register">
                         <span>Please fill in to become a member of this Family!</span>
                         <div class="signup">
@@ -135,7 +143,11 @@
                     <div class="formHeader">
                         <span>LOGOUT</span>
                     </div>
-                    <div class="formHeader"></div>
+                    <div class="notifier">
+                        <div class="loader"></div>
+                        <div class="error"></div>
+                        <div class="success">login successful</div>
+                    </div>
                     <form class="logout">
                         <span>Do You Really Want to Logout?</span>
                         <button type="button" onclick="logout()">LOGOUT</button>
@@ -145,7 +157,11 @@
                     <div class="formHeader">
                         <span>UPDATE PROFILE</span>
                     </div>
-                    <div class="formHeader"></div>
+                    <div class="notifier">
+                        <div class="loader"></div>
+                        <div class="error"></div>
+                        <div class="success">login successful</div>
+                    </div>
                     <form class="update">
                         <span>Please Click Edit Icon to Change fields</span>
                         <div class="update">
@@ -432,10 +448,9 @@
                 <div class="dropdown genres">
                     <div class="title">
                         <span>Genres</span>
-                        <!-- <div class="activeGenres">removed this additional showoff bcz conjusted</div> -->
-                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 -960 960 960" width="24px" fill="#424242">
-                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        <svg onclick="toggleFilterDropdown(event)" width="12" height="12" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.4502 0.525098L3.5002 3.4751L0.550195 0.525097"
+                            stroke="#1262AF" stroke-linecap="round" />
                         </svg>
                     </div>
                     <div>
@@ -694,9 +709,9 @@
                     <div class="title">
                         <span>Rating</span>
                         <!-- <div class="activeRating"></div> -->
-                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 -960 960 960" width="24px" fill="#424242">
-                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        <svg onclick="toggleFilterDropdown(event)" width="12" height="12" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.4502 0.525098L3.5002 3.4751L0.550195 0.525097"
+                            stroke="#1262AF" stroke-linecap="round" />
                         </svg>
                     </div>
                     <div>
@@ -786,9 +801,9 @@
                     <div class="title">
                         <span>Language</span>
                         <!-- <div class="activeLanguage"></div> -->
-                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 -960 960 960" width="24px" fill="#424242">
-                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        <svg onclick="toggleFilterDropdown(event)" width="12" height="12" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.4502 0.525098L3.5002 3.4751L0.550195 0.525097"
+                            stroke="#1262AF" stroke-linecap="round" />
                         </svg>
                     </div>
                     <div>
@@ -928,9 +943,9 @@
                     <div class="title">
                         <span>Countries</span>
                         <!-- <div class="activeCountries"></div> -->
-                        <svg onclick="toggleFilterDropdown(event)" xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 -960 960 960" width="24px" fill="#424242">
-                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        <svg onclick="toggleFilterDropdown(event)" width="12" height="12" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.4502 0.525098L3.5002 3.4751L0.550195 0.525097"
+                            stroke="#1262AF" stroke-linecap="round" />
                         </svg>
                     </div>
                     <div>
@@ -1144,175 +1159,6 @@
                 <div class="recentlyBooked">
                     <div class="title">WISHLIST</div>
                     <div class="recentCards">
-                        <div class="recentCard">
-                            <div class="airlinePrice">
-                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M17.384 2.0842C8.7755 2.0842 1.73053 9.2875 1.73053 18.2577C1.73053 27.2272 8.77613 34.4299 17.384 34.4299C25.9911 34.4299 33.036 27.2273 33.036 18.2577C33.036 9.28747 25.9903 2.0842 17.384 2.0842ZM0.176758 18.2577C0.176758 8.52447 7.8415 0.564697 17.384 0.564697C26.9244 0.564697 34.5898 8.5245 34.5898 18.2577C34.5898 27.9903 26.9251 35.9494 17.384 35.9494C7.84229 35.9494 0.176758 27.9904 0.176758 18.2577Z"
-                                        fill="#CF4037" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M22.3444 14.545C21.5874 9.29753 17.164 6.70646 14.4009 5.15432C11.8366 3.71468 9.5407 3.06049 9.48531 3.22924C12.4018 5.57447 14.2745 9.22808 14.2745 13.3331C14.2745 20.0646 9.23534 25.5836 2.8335 26.0989L3.23828 26.7239C11.4339 25.4475 33.3664 21.3758 33.3664 21.3758L33.4246 20.8973L20.1181 20.4417C21.5867 18.8896 22.5922 16.2547 22.3444 14.545V14.545Z"
-                                        fill="#CF4037" />
-                                </svg>
-                                <span>Turkish Airlines</span>
-                                <span>$1128</span>
-                            </div>
-                            <div class="locations">
-                                <div class="departure">
-                                    <span>SIN</span>
-                                    <span>Singapore</span>
-                                </div>
-                                <div class="flightDuration">
-                                    <svg width="50" height="20" viewBox="0 0 108 16" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4.52029 8.03241L101.528 8.17033" stroke="#CACACA"
-                                            stroke-width="0.836813" stroke-linecap="square"
-                                            stroke-dasharray="1.67 4.18" />
-                                        <path
-                                            d="M50.366 15.6044H52.0188L56.1508 9.24466L60.696 9.24466C61.3819 9.24466 61.9355 8.71204 61.9355 8.0522C61.9355 7.39237 61.3819 6.85975 60.696 6.85975L56.1508 6.85975L52.0188 0.5L50.366 0.5L52.432 6.85978L47.8869 6.85978L46.6473 5.26983H45.4077L46.2341 8.05224L45.4077 10.8346H46.6473L47.8869 9.24466H52.432L50.366 15.6044Z"
-                                            fill="#1262AE" />
-                                        <!-- <circle cx="4.6167" cy="8" r="3.66319" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
-                                        <!-- <path d="M106.389 8.68406C106.389 10.5024 104.848 12.0313 102.877 12.0313C100.906 12.0313 99.3642 10.5024 99.3642 8.68406C99.3642 6.8657 100.906 5.33681 102.877 5.33681C104.848 5.33681 106.389 6.8657 106.389 8.68406Z" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
-                                    </svg>
-                                </div>
-                                <div class="arrival">
-                                    <span>LAX</span>
-                                    <span>Los Angeles</span>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="class">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.6668 5.99996V3.99996C12.6668 3.64634 12.5264 3.3072 12.2763 3.05715C12.0263 2.8071 11.6871 2.66663 11.3335 2.66663H4.66683C4.31321 2.66663 3.97407 2.8071 3.72402 3.05715C3.47397 3.3072 3.3335 3.64634 3.3335 3.99996V5.99996"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M2 7.33333V10.6667C2 11.0203 2.14048 11.3594 2.39052 11.6095C2.64057 11.8595 2.97971 12 3.33333 12H12.6667C13.0203 12 13.3594 11.8595 13.6095 11.6095C13.8595 11.3594 14 11.0203 14 10.6667V7.33333C14 6.97971 13.8595 6.64057 13.6095 6.39052C13.3594 6.14048 13.0203 6 12.6667 6C12.313 6 11.9739 6.14048 11.7239 6.39052C11.4738 6.64057 11.3333 6.97971 11.3333 7.33333V8.66667H4.66667V7.33333C4.66667 6.97971 4.52619 6.64057 4.27614 6.39052C4.02609 6.14048 3.68696 6 3.33333 6C2.97971 6 2.64057 6.14048 2.39052 6.39052C2.14048 6.64057 2 6.97971 2 7.33333V7.33333Z"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M3.3335 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M12.6665 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    <span>Economy</span>
-                                </div>
-                                <div class="class">
-                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M11.0664 12.7429V11.4762C11.0664 10.8043 10.7995 10.16 10.3244 9.68487C9.84935 9.20978 9.20499 8.94287 8.53311 8.94287H3.46644C2.79456 8.94287 2.15019 9.20978 1.6751 9.68487C1.20001 10.16 0.933105 10.8043 0.933105 11.4762V12.7429"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M5.99964 6.40956C7.39876 6.40956 8.53298 5.27535 8.53298 3.87623C8.53298 2.47711 7.39876 1.3429 5.99964 1.3429C4.60052 1.3429 3.46631 2.47711 3.46631 3.87623C3.46631 5.27535 4.60052 6.40956 5.99964 6.40956Z"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M14.8664 12.7428V11.4762C14.866 10.9149 14.6792 10.3696 14.3353 9.92597C13.9914 9.48235 13.5099 9.1655 12.9664 9.02517M10.4331 1.42517C10.978 1.56469 11.461 1.88161 11.8059 2.32597C12.1509 2.77032 12.3381 3.31683 12.3381 3.87934C12.3381 4.44185 12.1509 4.98835 11.8059 5.43271C11.461 5.87706 10.978 6.19398 10.4331 6.3335"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                    <span>2 people</span>
-                                </div>
-                            </div>
-                            <div class="provider">
-                                <span>booked on</span>
-                                <span>Kaynak</span>
-                                <span>1s ago!</span>
-                            </div>
-                        </div>
-                        <div class="recentCard">
-                            <div class="airlinePrice">
-                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M17.384 2.0842C8.7755 2.0842 1.73053 9.2875 1.73053 18.2577C1.73053 27.2272 8.77613 34.4299 17.384 34.4299C25.9911 34.4299 33.036 27.2273 33.036 18.2577C33.036 9.28747 25.9903 2.0842 17.384 2.0842ZM0.176758 18.2577C0.176758 8.52447 7.8415 0.564697 17.384 0.564697C26.9244 0.564697 34.5898 8.5245 34.5898 18.2577C34.5898 27.9903 26.9251 35.9494 17.384 35.9494C7.84229 35.9494 0.176758 27.9904 0.176758 18.2577Z"
-                                        fill="#CF4037" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M22.3444 14.545C21.5874 9.29753 17.164 6.70646 14.4009 5.15432C11.8366 3.71468 9.5407 3.06049 9.48531 3.22924C12.4018 5.57447 14.2745 9.22808 14.2745 13.3331C14.2745 20.0646 9.23534 25.5836 2.8335 26.0989L3.23828 26.7239C11.4339 25.4475 33.3664 21.3758 33.3664 21.3758L33.4246 20.8973L20.1181 20.4417C21.5867 18.8896 22.5922 16.2547 22.3444 14.545V14.545Z"
-                                        fill="#CF4037" />
-                                </svg>
-                                <span>Turkish Airlines</span>
-                                <span>$1128</span>
-                            </div>
-                            <div class="locations">
-                                <div class="departure">
-                                    <span>SIN</span>
-                                    <span>Singapore</span>
-                                </div>
-                                <div class="flightDuration">
-                                    <svg width="50" height="20" viewBox="0 0 108 16" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4.52029 8.03241L101.528 8.17033" stroke="#CACACA"
-                                            stroke-width="0.836813" stroke-linecap="square"
-                                            stroke-dasharray="1.67 4.18" />
-                                        <path
-                                            d="M50.366 15.6044H52.0188L56.1508 9.24466L60.696 9.24466C61.3819 9.24466 61.9355 8.71204 61.9355 8.0522C61.9355 7.39237 61.3819 6.85975 60.696 6.85975L56.1508 6.85975L52.0188 0.5L50.366 0.5L52.432 6.85978L47.8869 6.85978L46.6473 5.26983H45.4077L46.2341 8.05224L45.4077 10.8346H46.6473L47.8869 9.24466H52.432L50.366 15.6044Z"
-                                            fill="#1262AE" />
-                                        <!-- <circle cx="4.6167" cy="8" r="3.66319" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
-                                        <!-- <path d="M106.389 8.68406C106.389 10.5024 104.848 12.0313 102.877 12.0313C100.906 12.0313 99.3642 10.5024 99.3642 8.68406C99.3642 6.8657 100.906 5.33681 102.877 5.33681C104.848 5.33681 106.389 6.8657 106.389 8.68406Z" fill="white" stroke="#1262AE" stroke-width="1.67363"/> -->
-                                    </svg>
-                                </div>
-                                <div class="arrival">
-                                    <span>LAX</span>
-                                    <span>Los Angeles</span>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="class">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.6668 5.99996V3.99996C12.6668 3.64634 12.5264 3.3072 12.2763 3.05715C12.0263 2.8071 11.6871 2.66663 11.3335 2.66663H4.66683C4.31321 2.66663 3.97407 2.8071 3.72402 3.05715C3.47397 3.3072 3.3335 3.64634 3.3335 3.99996V5.99996"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M2 7.33333V10.6667C2 11.0203 2.14048 11.3594 2.39052 11.6095C2.64057 11.8595 2.97971 12 3.33333 12H12.6667C13.0203 12 13.3594 11.8595 13.6095 11.6095C13.8595 11.3594 14 11.0203 14 10.6667V7.33333C14 6.97971 13.8595 6.64057 13.6095 6.39052C13.3594 6.14048 13.0203 6 12.6667 6C12.313 6 11.9739 6.14048 11.7239 6.39052C11.4738 6.64057 11.3333 6.97971 11.3333 7.33333V8.66667H4.66667V7.33333C4.66667 6.97971 4.52619 6.64057 4.27614 6.39052C4.02609 6.14048 3.68696 6 3.33333 6C2.97971 6 2.64057 6.14048 2.39052 6.39052C2.14048 6.64057 2 6.97971 2 7.33333V7.33333Z"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M3.3335 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M12.6665 12V13.3333" stroke="#7E8B97" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    <span>Economy</span>
-                                </div>
-                                <div class="class">
-                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M11.0664 12.7429V11.4762C11.0664 10.8043 10.7995 10.16 10.3244 9.68487C9.84935 9.20978 9.20499 8.94287 8.53311 8.94287H3.46644C2.79456 8.94287 2.15019 9.20978 1.6751 9.68487C1.20001 10.16 0.933105 10.8043 0.933105 11.4762V12.7429"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M5.99964 6.40956C7.39876 6.40956 8.53298 5.27535 8.53298 3.87623C8.53298 2.47711 7.39876 1.3429 5.99964 1.3429C4.60052 1.3429 3.46631 2.47711 3.46631 3.87623C3.46631 5.27535 4.60052 6.40956 5.99964 6.40956Z"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M14.8664 12.7428V11.4762C14.866 10.9149 14.6792 10.3696 14.3353 9.92597C13.9914 9.48235 13.5099 9.1655 12.9664 9.02517M10.4331 1.42517C10.978 1.56469 11.461 1.88161 11.8059 2.32597C12.1509 2.77032 12.3381 3.31683 12.3381 3.87934C12.3381 4.44185 12.1509 4.98835 11.8059 5.43271C11.461 5.87706 10.978 6.19398 10.4331 6.3335"
-                                            stroke="#7E8B97" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                    <span>2 people</span>
-                                </div>
-                            </div>
-                            <div class="provider">
-                                <span>booked on</span>
-                                <span>Kaynak</span>
-                                <span>1s ago!</span>
-                            </div>
-                        </div>
-                        <button class="showMore">
-                            Show More
-                            <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.4502 0.525098L3.5002 3.4751L0.550195 0.525097" stroke="#1262AF"
-                                    stroke-linecap="round" />
-                            </svg>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -1366,6 +1212,7 @@
     <%} %>
     <script src="/scripts/utility.js"></script>
     <script src="/scripts/select2.js"></script>
+    <script src="/scripts/verticalScrollableContainer.js"></script>
     <script src="/scripts/headerAuth.js"></script>
     <script src="/scripts/movieResults.js"></script>
 </body>

@@ -57,7 +57,8 @@ function isValidUrl(urlString){
         return new URL(urlString);
     }
     catch(error){
-        return error;
+        console.warn(error,'\ninvalid url');
+        return null;
     }
 }
 
@@ -73,5 +74,28 @@ function isValidHTML(htmlString) {
     }
 
     // Return the body element containing the parsed HTML content
-    return doc.body;
+    const divElement = doc.querySelector('div');
+    return divElement;
+}
+
+function isValidCSS(cssString) {
+    try {
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(cssString);
+        return cssString; // CSS is valid
+    } catch (e) {
+        console.warn("CSS parsing error:", e.message);
+        return null; // CSS is invalid
+    }
+}
+
+function isValidCSS2(cssString) {
+    try {
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(cssString);
+        return sheet;
+    } catch (e) {
+        console.warn("CSS parsing error:", e.message);
+        return null;
+    }
 }

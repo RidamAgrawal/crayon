@@ -89,7 +89,7 @@
     box-sizing: border-box;
     padding: 50px calc(80/1440*100%);
     display: grid;
-    grid-template-columns: calc(260/1280*100%) calc(1020/1280*100%);
+    grid-template-columns: calc(240/1280*100%) calc(1020/1280*100%);
 }
 
 .searchResults .filter .title {
@@ -135,7 +135,7 @@
     font-size: 17px;
     color: #57575d;
     box-sizing: border-box;
-    padding: 0px 20px 0px 0px;
+    padding: 0px calc(20 / 1280 * 100%) 0px 0px;
 }
 
 .searchResults .resultsContainer .filter .genres .title .activeGenres,
@@ -208,7 +208,7 @@
 
 .searchResults .resultsSection {
     display: grid;
-    grid-template-columns: calc(750 / 1020 * 100%) 1fr;
+    grid-template-columns: calc(750 / 1020 * 100%) calc(270 / 1020 * 100%);
 }
 
 .searchResults .resultsSection .flightCards {
@@ -307,7 +307,7 @@
 }
 
 .searchResults .resultsContainer .resultsSection .recentlyBooked {
-    margin-left: 10px;
+    padding-left: calc(20 / 270 * 100%);
 }
 
 .searchResults .resultsContainer .resultsSection .recentlyBooked .title {
@@ -323,6 +323,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: scroll;
+    max-height: 370px;
 }
 
 .searchResults .resultsContainer .resultsSection .recentlyBooked .recentCard {
@@ -374,10 +376,12 @@
     font-weight: normal;
 }
 
-.searchResults .resultsContainer .resultsSection .recentlyBooked .recentCards .showMore {
+.searchResults .resultsContainer .resultsSection .recentlyBooked .showMore {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin-top: 4px;
     gap: 5px;
     padding: 5px;
     border-radius: 4px;

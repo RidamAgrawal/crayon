@@ -44,7 +44,7 @@ class ToggleButton{
         if(typeof failedStatus == 'string'){
             this.failedStatus = isValidHTML(failedStatus);
         }
-        if(styles){
+        if(typeof styles == 'string' && isValidCSS(styles)){
             this.additionalStyle = styles;
         }
         if(!this.yesButton||!this.noButton||!this.initialLogicFunction||!this.apiCallback){
@@ -105,8 +105,7 @@ class ToggleButton{
     handleStyle() {
         const wrapper = document.createElement('div');
         
-        const style = document.createElement('style');
-        style.textContent = `
+        const textContent = `
             .apiToggleButton {
                 
             }
@@ -145,9 +144,9 @@ class ToggleButton{
                 }
             }
         `;
-        style.textContent += this.additionalStyle;
+        textContent += this.additionalStyle;
 
-        wrapper.appendChild(style);
+        wrapper.style = textContent;
 
         // const componentDOM = /* all previous DOM from before */;
         // wrapper.appendChild(componentDOM);

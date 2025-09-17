@@ -137,10 +137,11 @@ class select2 {
         chipLabel.textContent = label;
         selectedFilter.appendChild(chipLabel);
 
-        const svgNS = "http://www.w3.org/2000/closeIcon";
-        const closeIcon = document.createElementNS(svgNS, "closeIcon");
+        const svgNS = "http://www.w3.org/2000/svg";
+        const closeIcon = document.createElementNS(svgNS, "svg");
 
         // Set SVG attributes
+        closeIcon.setAttribute("xmlns", svgNS);
         closeIcon.setAttribute("height", "16px");
         closeIcon.setAttribute("viewBox", "0 -960 960 960");
         closeIcon.setAttribute("width", "16px");
