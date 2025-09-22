@@ -42,7 +42,7 @@ class verticalScroller{
 
         const actionButton = document.createElement('button');
         actionButton.classList.add('verticalScrollerButton');
-        actionButton.addEventListener('click',this.addNextCard);
+        actionButton.addEventListener('click',this.addNextCard.bind(this));
 
         const loadingStatus = document.createElement('div');
         loadingStatus.classList.add('loader','hide');
@@ -104,6 +104,8 @@ class verticalScroller{
                 color: #1262af;
                 box-sizing: border-box;
                 text-align: center;
+                display: flex;
+                justify-content: center;
             }
             [disabled].verticalScrollerButton{
                 background-color: #1262af;
@@ -116,7 +118,6 @@ class verticalScroller{
                 height: 36px;
                 border-radius: 50%;
                 animation: spin 1s linear infinite;
-                position: 
             }
 
             @keyframes spin {
@@ -129,10 +130,11 @@ class verticalScroller{
                 }
             }
             .showMoreDropdownIcon{
-                height: 7px;
-                width: 5px;
+                height: 8px;
+                width: 8px;
                 stroke: #1262af;
                 stroke-linecap: round;
+                fill: none;
             }
             svg.emptyIcon{
                 fill: #1262af1a;
@@ -142,11 +144,14 @@ class verticalScroller{
         Object.assign(this.wrapper.style,{
                 display: 'flex',
                 'flex-direction': 'column',
-                'align-items': 'center',
+                'align-items': 'center', 
+                'overflow-y': 'scroll',
+                'max-height': '370px',
                 width: '100%',
                 border: '1px solid #cecece',
                 'box-shadow': '0px 2px 3px rgba(0, 0, 0, 0.2)',
                 'border-radius': '4px',
+                'scrollbar-width':'none'
             });
         if(isValidCSS2(this.additionalStyle)){
             textContent = this.additionalStyle + textContent;
@@ -163,9 +168,10 @@ class verticalScroller{
                 actionButton.disabled = true;
                 const cards = await this.getCards();
                 if(Array.isArray(cards) && cards.length > 0 && cards[0] instanceof HTMLElement){
-                    cards.forEach((card) => this.shadowWrapper.prepend(card));
+                    cards.forEach((card) => this.shadowWrapper.insertBefore(card,actionButton));
                     this.hideLoader();
                     this.hideEmpty();
+                    actionButton.disabled = false;
                 }else{
                     this.failed = true;
                     this.hideLoader();

@@ -392,6 +392,7 @@ header nav .navRight .accountsSection .profileImage ul.select:hover {
     z-index: 1;
     border-radius: 10px;
     border: 1px solid #EAEAEA;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
     padding: calc(20/1160*100%);
     font-family: "Roboto", sans-serif;
 }
@@ -770,6 +771,13 @@ header nav .navRight .accountsSection .profileImage ul.select:hover {
         font-size: 24px;
         color: #1262aF;
     }
+}
+.recentSearches .recents .flightContainer .toFrom .to a{
+    text-decoration: none;
+    color: inherit;
+}
+.recentSearches .recents .flightContainer .toFrom .to a:hover{
+    border-bottom: 1px solid #1262af;
 }
 
 .recentSearches .recents .flightContainer .date {

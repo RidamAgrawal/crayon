@@ -276,20 +276,7 @@ searchForm.addEventListener('click', (event) => {
 })
 
 async function showRecentSearches() {
-    const user = await fetch(url.origin + '/user/loginUser', {
-        method: 'POST',
-        headers: {
-            'Content-Type': "application/json"
-        },
-        body: JSON.stringify({})
-    })
-    .then(res => res.json())
-
-    if (user.hasOwnProperty('error')) {
-        console.log(user);
-        return [];
-    }
-    const searches = await fetch(url.origin + '/user/visited/' + user.id)
+    const searches = await fetch(url.origin + '/user/visited')
         .then(res => res.json())
         
     const recentsContainerTileHolder = recentsContainer.querySelector('.Container');

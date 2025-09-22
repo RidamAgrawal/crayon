@@ -121,30 +121,29 @@ router.put('/update/:id', async (req, res) => {
 });
 
 // fetches all visited movies by latest order
-router.get('/visited/:id', async (req, res) => {
+router.get('/visited', async (req, res) => {
     try {
-        const id = req.params.id;
-        const user = await userModel.findById(id).populate({
-            path: 'visited.movie', // Populate movie field inside searches array
-            select: 'title year poster',   // Optional: pick fields you want from the movie
-        });
-
-        if (!user) {
-            return res.status(404).json({
-                error: "not found",
-                message: 'user not found',
+        let token = req.cookies.token;
+        if(token) {
+            let decoded = jwt.verify(token,process.env.JWT_SECRET_KEY);
+            let {id} = decoded;
+            const user = await userModel.findById(id).populate({
+                path: 'visited.movie',
+                select: 'title poster',
             });
+            const visitedMovies = user.visited
+            .sort((a, b) => b.createdAt - a.createdAt)
+            .map(entry => ({
+                movieId: entry.movie?._id,
+                title: entry.movie?.title,
+                poster: entry.movie?.poster,
+                visitedAt: entry?.createdAt
+            }));
+            return res.status(200).json({ visitedMovies });
         }
-        const visitedMovies = user.visited
-        .sort((a, b) => b.createdAt - a.createdAt)
-        .map(entry => ({
-            movieId: entry.movie._id,
-            title: entry.movie.title,
-            year: entry.movie.year,
-            poster: entry.movie.poster,
-            visitedAt: entry.createdAt
-        }));
-        return res.status(200).json({ visitedMovies });
+        else {
+            res.status(401).json({error:'authentication error',message:'user login required'});
+        }
     } catch (err) {
         console.error(err);
         return res.status(500).json({
@@ -206,8 +205,10 @@ router.get('/wishlist/:movieId', async (req, res) => {
     }
 });
 
-router.get('/wishlist',async (req,res) => {
+router.post('/wishlist',async (req,res) => {
     try{
+        const page = req.body?.page || 0;
+        const limit = 2;
         let token = req.cookies.token;
         if(token) {
             let decoded = jwt.verify(token,process.env.JWT_SECRET_KEY);
@@ -216,8 +217,20 @@ router.get('/wishlist',async (req,res) => {
                 path: 'wishlist.movie',
                 select: 'title year genres imdb comments likes',
             });
-             
-            res.status(200).json({ wishlist : user.wishlist });
+            const wishlist = user.wishlist
+            .sort((a, b) => b.createdAt - a.createdAt)
+            .map(entry => ({
+                movieId: entry.movie?._id,
+                title: entry.movie?.title,
+                year: entry.movie?.year,
+                genres: entry.movie?.genres?.at(0),
+                rating: entry.movie?.imdb?.rating,
+                comments: entry.movie?.comments?.length,
+                likes: entry.movie?.comments.length,
+                createdAt: entry.createdAt
+            }))
+            .splice(page * limit,limit);
+            res.status(200).json({ wishlist });
         }
         else {
             res.status(401).json({error:'authentication error',message:'user login required'});

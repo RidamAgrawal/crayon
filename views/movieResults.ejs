@@ -362,70 +362,8 @@
                 <div class="titleGroup">
                     <p>FILTER MOVIES</p>
                 </div>
+                <div class="inputRow"></div>
                 <div class="inputRow">
-                    <!-- <div>
-                        <input type="text" id="rating" placeholder="">
-                        <label for="rating">rating</label>
-                        <ul class="select hide">
-                            <div>
-                                <li data-rating="All">All</li>
-                                <li data-rating="Above 9">Above 9</li>
-                                <li data-rating="Above 8">Above 8</li>
-                                <li data-rating="Above 7">Above 7</li>
-                                <li data-rating="Above 6">Above 6</li>
-                                <li data-rating="Above 5">Above 5</li>
-                                <li data-rating="Above 4">Above 4</li>
-                                <li data-rating="Above 3">Above 3</li>
-                            </div>
-                        </ul>
-                    </div>
-                    <div>
-                        <input type="text" id="language" placeholder="">
-                        <label for="language">language</label>
-                        <ul class="select hide">
-                            <div>
-                                <li data-language="English">English</li>
-                                <li data-language="Spanish">Spanish</li>
-                                <li data-language="French">French</li>
-                                <li data-language="Mandarin">Mandarin</li>
-                                <li data-language="Hindi">Hindi</li>
-                                <li data-language="Arabic">Arabic</li>
-                                <li data-language="German">German</li>
-                                <li data-language="Japanese">Japanese</li>
-                                <li data-language="Italian">Italian</li>
-                                <li data-language="Portuguese">Portuguese</li>
-                                <li data-language="Korean">Korean</li>
-                                <li data-language="Russian">Russian</li>
-                                <li data-language="Turkish">Turkish</li>
-                            </div>
-                        </ul>
-                    </div> -->
-                    <!-- <button>SEARCH FLIGHTS</button> -->
-                </div>
-                <div class="inputRow">
-                    <!-- <div>
-                        <input type="text" id="countries" placeholder="">
-                        <label for="countries">countries</label>
-                        <ul class="select hide">
-                            <div>
-                                <li data-countries="USA">USA</li>
-                                <li data-countries="India">India</li>
-                                <li data-countries="China">China</li>
-                                <li data-countries="UK">UK</li>
-                                <li data-countries="France">France</li>
-                                <li data-countries="Japan">Japan</li>
-                                <li data-countries="South">South Korea</li>
-                                <li data-countries="Italy">Italy</li>
-                                <li data-countries="Mexico">Mexico</li>
-                                <li data-countries="Germany">Germany</li>
-                                <li data-countries="Spain">Spain</li>
-                                <li data-countries="Australia">Australia</li>
-                                <li data-countries="Brazil">Brazil</li>
-                                <li data-countries="Russia">Russia</li>
-                                <li data-countries="Turkey">Turkey</li>
-                            </div>
-                        </ul>
-                    </div> -->
                     <div>
                         <input type="number" id="duration" placeholder="">
                         <label for="duration">duration</label>
@@ -443,7 +381,7 @@
 
     <div class="searchResults">
         <div class="resultsContainer">
-            <div class="filter">
+            <div class="filter" onclick="handleFilterSection(event)">
                 <p class="title">FILTER</p>
                 <div class="dropdown genres">
                     <div class="title">
@@ -1108,7 +1046,7 @@
                         <div>
                             <span>0 out of 0 Results</span>
                         </div>
-                        <div class="flightCard">
+                        <!-- <div class="flightCard">
                             <div class="airline">
                                 <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -1150,10 +1088,7 @@
                             <div class="pricing">
                                 S$ 723
                             </div>
-                        </div>
-                        <button class="showMore">
-                            No More Results
-                        </button>
+                        </div> -->
                     </div>
                 </div>
                 <div class="recentlyBooked">
